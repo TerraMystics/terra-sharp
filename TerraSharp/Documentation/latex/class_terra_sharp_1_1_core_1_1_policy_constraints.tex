@@ -1,0 +1,121 @@
+\hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints}{}\doxysection{Terra\+Sharp.\+Core.\+Policy\+Constraints Class Reference}
+\label{class_terra_sharp_1_1_core_1_1_policy_constraints}\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_a62f5298df65e6feb837179af476deb06}{Policy\+Constraints}} (decimal \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_ad5d059ca7a78bd131bdf545183a57255}{rate\+\_\+min}}, decimal \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_abafa3f139c3d16fc737feb743cc44c1c}{rate\+\_\+max}}, \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_coin}{Coin}} cap, decimal \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_a64ecd14032d137d9bc66c69c607c3fb3}{change\+\_\+rate\+\_\+max}})
+\item 
+\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_amino_args}{Policy\+Constraints\+Amino\+Args}} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_a97b19d50281f77bfa661530acab81805}{To\+Amino}} ()
+\item 
+\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_data_args}{Policy\+Constraints\+Data\+Args}} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_add58c0ca84ab770ee6d89a6c6d9fa35f}{To\+Data}} ()
+\item 
+PROTO.\+Policy\+Constraints \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_aa6826165f99de2ea36af5653d8c92c79}{To\+Proto\+With\+Type}} ()
+\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_afdb765b317e50d1c23fdfc7eee50b95a}{To\+Proto}} ()
+\item 
+decimal \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_af5240d0ec0ba369452bca70f7e3c6d00}{Clamp}} (double prev\+Rate, double new\+Rate)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints}{Policy\+Constraints}} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_a0ddb4cc4b7a772144b4880b0eac9a8c2}{From\+Data}} (\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_amino_args}{Policy\+Constraints\+Amino\+Args}} data)
+\item 
+static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints}{Policy\+Constraints}} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_a1fda18f743c0f5c1ec9cfeb8478dc827}{From\+Data}} (\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_data_args}{Policy\+Constraints\+Data\+Args}} data)
+\item 
+static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints}{Policy\+Constraints}} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_a5871779d750d8a012656d5481c481beb}{From\+Proto}} (PROTO.\+Policy\+Constraints data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly decimal \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_ad5d059ca7a78bd131bdf545183a57255}{rate\+\_\+min}}
+\item 
+readonly decimal \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_abafa3f139c3d16fc737feb743cc44c1c}{rate\+\_\+max}}
+\item 
+readonly decimal \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_a64ecd14032d137d9bc66c69c607c3fb3}{change\+\_\+rate\+\_\+max}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_a62f5298df65e6feb837179af476deb06}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_a62f5298df65e6feb837179af476deb06}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!PolicyConstraints@{PolicyConstraints}}
+\index{PolicyConstraints@{PolicyConstraints}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{PolicyConstraints()}{PolicyConstraints()}}
+{\footnotesize\ttfamily Terra\+Sharp.\+Core.\+Policy\+Constraints.\+Policy\+Constraints (\begin{DoxyParamCaption}\item[{decimal}]{rate\+\_\+min,  }\item[{decimal}]{rate\+\_\+max,  }\item[{\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_coin}{Coin}}}]{cap,  }\item[{decimal}]{change\+\_\+rate\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_af5240d0ec0ba369452bca70f7e3c6d00}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_af5240d0ec0ba369452bca70f7e3c6d00}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!Clamp@{Clamp}}
+\index{Clamp@{Clamp}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{Clamp()}{Clamp()}}
+{\footnotesize\ttfamily decimal Terra\+Sharp.\+Core.\+Policy\+Constraints.\+Clamp (\begin{DoxyParamCaption}\item[{double}]{prev\+Rate,  }\item[{double}]{new\+Rate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_a0ddb4cc4b7a772144b4880b0eac9a8c2}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_a0ddb4cc4b7a772144b4880b0eac9a8c2}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!FromData@{FromData}}
+\index{FromData@{FromData}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{FromData()}{FromData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints}{Policy\+Constraints}} Terra\+Sharp.\+Core.\+Policy\+Constraints.\+From\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_amino_args}{Policy\+Constraints\+Amino\+Args}}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_a1fda18f743c0f5c1ec9cfeb8478dc827}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_a1fda18f743c0f5c1ec9cfeb8478dc827}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!FromData@{FromData}}
+\index{FromData@{FromData}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{FromData()}{FromData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints}{Policy\+Constraints}} Terra\+Sharp.\+Core.\+Policy\+Constraints.\+From\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_data_args}{Policy\+Constraints\+Data\+Args}}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_a5871779d750d8a012656d5481c481beb}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_a5871779d750d8a012656d5481c481beb}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!FromProto@{FromProto}}
+\index{FromProto@{FromProto}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{FromProto()}{FromProto()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints}{Policy\+Constraints}} Terra\+Sharp.\+Core.\+Policy\+Constraints.\+From\+Proto (\begin{DoxyParamCaption}\item[{PROTO.\+Policy\+Constraints}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_a97b19d50281f77bfa661530acab81805}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_a97b19d50281f77bfa661530acab81805}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!ToAmino@{ToAmino}}
+\index{ToAmino@{ToAmino}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{ToAmino()}{ToAmino()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_amino_args}{Policy\+Constraints\+Amino\+Args}} Terra\+Sharp.\+Core.\+Policy\+Constraints.\+To\+Amino (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_add58c0ca84ab770ee6d89a6c6d9fa35f}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_add58c0ca84ab770ee6d89a6c6d9fa35f}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!ToData@{ToData}}
+\index{ToData@{ToData}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{ToData()}{ToData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_policy_constraints_data_args}{Policy\+Constraints\+Data\+Args}} Terra\+Sharp.\+Core.\+Policy\+Constraints.\+To\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_afdb765b317e50d1c23fdfc7eee50b95a}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_afdb765b317e50d1c23fdfc7eee50b95a}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!ToProto@{ToProto}}
+\index{ToProto@{ToProto}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{ToProto()}{ToProto()}}
+{\footnotesize\ttfamily byte\mbox{[}$\,$\mbox{]} Terra\+Sharp.\+Core.\+Policy\+Constraints.\+To\+Proto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_aa6826165f99de2ea36af5653d8c92c79}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_aa6826165f99de2ea36af5653d8c92c79}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!ToProtoWithType@{ToProtoWithType}}
+\index{ToProtoWithType@{ToProtoWithType}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{ToProtoWithType()}{ToProtoWithType()}}
+{\footnotesize\ttfamily PROTO.\+Policy\+Constraints Terra\+Sharp.\+Core.\+Policy\+Constraints.\+To\+Proto\+With\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_a64ecd14032d137d9bc66c69c607c3fb3}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_a64ecd14032d137d9bc66c69c607c3fb3}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!change\_rate\_max@{change\_rate\_max}}
+\index{change\_rate\_max@{change\_rate\_max}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{change\_rate\_max}{change\_rate\_max}}
+{\footnotesize\ttfamily readonly decimal Terra\+Sharp.\+Core.\+Policy\+Constraints.\+change\+\_\+rate\+\_\+max}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_abafa3f139c3d16fc737feb743cc44c1c}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_abafa3f139c3d16fc737feb743cc44c1c}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!rate\_max@{rate\_max}}
+\index{rate\_max@{rate\_max}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{rate\_max}{rate\_max}}
+{\footnotesize\ttfamily readonly decimal Terra\+Sharp.\+Core.\+Policy\+Constraints.\+rate\+\_\+max}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_policy_constraints_ad5d059ca7a78bd131bdf545183a57255}\label{class_terra_sharp_1_1_core_1_1_policy_constraints_ad5d059ca7a78bd131bdf545183a57255}} 
+\index{TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}!rate\_min@{rate\_min}}
+\index{rate\_min@{rate\_min}!TerraSharp.Core.PolicyConstraints@{TerraSharp.Core.PolicyConstraints}}
+\doxysubsubsection{\texorpdfstring{rate\_min}{rate\_min}}
+{\footnotesize\ttfamily readonly decimal Terra\+Sharp.\+Core.\+Policy\+Constraints.\+rate\+\_\+min}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Terra\+Rebels/terra-\/sharp/\+Terra\+Sharp/\+Core/\mbox{\hyperlink{_policy_constraints_8cs}{Policy\+Constraints.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraSharp", "TerraSharp\TerraSharp.csproj", "{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{E58980E7-4A68-4F95-B6E7-A2504A8F20AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{46E0B6D6-AFB1-43F7-AA00-8CE8B697EF81}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraSharp.Maui.Example", "TerraSharp.Maui.Example\TerraSharp.Maui.Example.csproj", "{38A6640F-2327-4B0B-864B-41DF7D25905C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraSharp.Legacy", "TerraSharp.Legacy\TerraSharp.Legacy.csproj", "{74397AFD-A21E-48A8-A8A1-E8EFA7DB1BE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraProto.CSharp.Legacy", "TerraProto.CSharp.Legacy\TerraProto.CSharp.Legacy.csproj", "{AE13EFD4-D389-4492-8D21-6DF19106106C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraSharp.Rest.Legacy", "TerraSharp.Rest.Legacy\TerraSharp.Rest.Legacy.csproj", "{F207AC51-837E-45EE-A43C-9DFC9E31D1C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298F5E51-A6EE-4E1B-99AF-DF23E35C29A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A6640F-2327-4B0B-864B-41DF7D25905C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A6640F-2327-4B0B-864B-41DF7D25905C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A6640F-2327-4B0B-864B-41DF7D25905C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{38A6640F-2327-4B0B-864B-41DF7D25905C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A6640F-2327-4B0B-864B-41DF7D25905C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A6640F-2327-4B0B-864B-41DF7D25905C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{74397AFD-A21E-48A8-A8A1-E8EFA7DB1BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74397AFD-A21E-48A8-A8A1-E8EFA7DB1BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74397AFD-A21E-48A8-A8A1-E8EFA7DB1BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74397AFD-A21E-48A8-A8A1-E8EFA7DB1BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE13EFD4-D389-4492-8D21-6DF19106106C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE13EFD4-D389-4492-8D21-6DF19106106C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE13EFD4-D389-4492-8D21-6DF19106106C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE13EFD4-D389-4492-8D21-6DF19106106C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F207AC51-837E-45EE-A43C-9DFC9E31D1C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F207AC51-837E-45EE-A43C-9DFC9E31D1C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F207AC51-837E-45EE-A43C-9DFC9E31D1C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F207AC51-837E-45EE-A43C-9DFC9E31D1C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38A6640F-2327-4B0B-864B-41DF7D25905C} = {46E0B6D6-AFB1-43F7-AA00-8CE8B697EF81}
+		{AE13EFD4-D389-4492-8D21-6DF19106106C} = {E58980E7-4A68-4F95-B6E7-A2504A8F20AD}
+		{F207AC51-837E-45EE-A43C-9DFC9E31D1C7} = {E58980E7-4A68-4F95-B6E7-A2504A8F20AD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8EC30CC-8752-47D9-92D6-884596B88E0A}
+	EndGlobalSection
+EndGlobal

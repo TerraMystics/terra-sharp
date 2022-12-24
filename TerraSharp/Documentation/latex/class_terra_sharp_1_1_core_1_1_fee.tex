@@ -1,0 +1,97 @@
+\hypertarget{class_terra_sharp_1_1_core_1_1_fee}{}\doxysection{Terra\+Sharp.\+Core.\+Fee Class Reference}
+\label{class_terra_sharp_1_1_core_1_1_fee}\index{TerraSharp.Core.Fee@{TerraSharp.Core.Fee}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_a59e05e7e266f073dd6d34da213578f00}{Fee}} (double gas\+\_\+limit, List$<$ \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_coin}{Coin}} $>$ \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_a3f5dc013e89858f5197fff18bd8fcd9b}{amount}}, string? payer, string? granter)
+\item 
+\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_amino_args}{Fee\+Amino\+Args}} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_a856b02c09f4a3895aa6da84b476eea73}{To\+Amino}} ()
+\item 
+\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_data_args}{Fee\+Data\+Args}} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_a76fde20c887e0ac7353b1d87800d8030}{To\+Data}} ()
+\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_ae287b5b55fc98735fc712f0ac3a76541}{To\+Proto}} ()
+\item 
+IEnumerable$<$ \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_coin}{Coin}} $>$ \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_a6e8f86d1eab4c230e84cff4fb55312a5}{Gas\+Prices}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee}{Fee}} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_a6fe4357751c2803afb0ef5678ed0893f}{From\+Amino}} (\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_amino_args}{Fee\+Amino\+Args}} data)
+\item 
+static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee}{Fee}} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_ab4db86eb85600635688b52c3315fd6cd}{From\+Data}} (\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_data_args}{Fee\+Data\+Args}} data)
+\item 
+static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee}{Fee}} \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_ae91825d61ad5aa791987af9e225564d0}{From\+Proto}} (COMB.\+Fee data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly List$<$ \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_coin}{Coin}} $>$ \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_a3f5dc013e89858f5197fff18bd8fcd9b}{amount}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_fee_a59e05e7e266f073dd6d34da213578f00}\label{class_terra_sharp_1_1_core_1_1_fee_a59e05e7e266f073dd6d34da213578f00}} 
+\index{TerraSharp.Core.Fee@{TerraSharp.Core.Fee}!Fee@{Fee}}
+\index{Fee@{Fee}!TerraSharp.Core.Fee@{TerraSharp.Core.Fee}}
+\doxysubsubsection{\texorpdfstring{Fee()}{Fee()}}
+{\footnotesize\ttfamily Terra\+Sharp.\+Core.\+Fee.\+Fee (\begin{DoxyParamCaption}\item[{double}]{gas\+\_\+limit,  }\item[{List$<$ \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_coin}{Coin}} $>$}]{amount,  }\item[{string?}]{payer,  }\item[{string?}]{granter }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_fee_a6fe4357751c2803afb0ef5678ed0893f}\label{class_terra_sharp_1_1_core_1_1_fee_a6fe4357751c2803afb0ef5678ed0893f}} 
+\index{TerraSharp.Core.Fee@{TerraSharp.Core.Fee}!FromAmino@{FromAmino}}
+\index{FromAmino@{FromAmino}!TerraSharp.Core.Fee@{TerraSharp.Core.Fee}}
+\doxysubsubsection{\texorpdfstring{FromAmino()}{FromAmino()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee}{Fee}} Terra\+Sharp.\+Core.\+Fee.\+From\+Amino (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_amino_args}{Fee\+Amino\+Args}}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_fee_ab4db86eb85600635688b52c3315fd6cd}\label{class_terra_sharp_1_1_core_1_1_fee_ab4db86eb85600635688b52c3315fd6cd}} 
+\index{TerraSharp.Core.Fee@{TerraSharp.Core.Fee}!FromData@{FromData}}
+\index{FromData@{FromData}!TerraSharp.Core.Fee@{TerraSharp.Core.Fee}}
+\doxysubsubsection{\texorpdfstring{FromData()}{FromData()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee}{Fee}} Terra\+Sharp.\+Core.\+Fee.\+From\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_data_args}{Fee\+Data\+Args}}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_fee_ae91825d61ad5aa791987af9e225564d0}\label{class_terra_sharp_1_1_core_1_1_fee_ae91825d61ad5aa791987af9e225564d0}} 
+\index{TerraSharp.Core.Fee@{TerraSharp.Core.Fee}!FromProto@{FromProto}}
+\index{FromProto@{FromProto}!TerraSharp.Core.Fee@{TerraSharp.Core.Fee}}
+\doxysubsubsection{\texorpdfstring{FromProto()}{FromProto()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee}{Fee}} Terra\+Sharp.\+Core.\+Fee.\+From\+Proto (\begin{DoxyParamCaption}\item[{COMB.\+Fee}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_fee_a6e8f86d1eab4c230e84cff4fb55312a5}\label{class_terra_sharp_1_1_core_1_1_fee_a6e8f86d1eab4c230e84cff4fb55312a5}} 
+\index{TerraSharp.Core.Fee@{TerraSharp.Core.Fee}!GasPrices@{GasPrices}}
+\index{GasPrices@{GasPrices}!TerraSharp.Core.Fee@{TerraSharp.Core.Fee}}
+\doxysubsubsection{\texorpdfstring{GasPrices()}{GasPrices()}}
+{\footnotesize\ttfamily IEnumerable$<$ \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_coin}{Coin}} $>$ Terra\+Sharp.\+Core.\+Fee.\+Gas\+Prices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_fee_a856b02c09f4a3895aa6da84b476eea73}\label{class_terra_sharp_1_1_core_1_1_fee_a856b02c09f4a3895aa6da84b476eea73}} 
+\index{TerraSharp.Core.Fee@{TerraSharp.Core.Fee}!ToAmino@{ToAmino}}
+\index{ToAmino@{ToAmino}!TerraSharp.Core.Fee@{TerraSharp.Core.Fee}}
+\doxysubsubsection{\texorpdfstring{ToAmino()}{ToAmino()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_amino_args}{Fee\+Amino\+Args}} Terra\+Sharp.\+Core.\+Fee.\+To\+Amino (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_fee_a76fde20c887e0ac7353b1d87800d8030}\label{class_terra_sharp_1_1_core_1_1_fee_a76fde20c887e0ac7353b1d87800d8030}} 
+\index{TerraSharp.Core.Fee@{TerraSharp.Core.Fee}!ToData@{ToData}}
+\index{ToData@{ToData}!TerraSharp.Core.Fee@{TerraSharp.Core.Fee}}
+\doxysubsubsection{\texorpdfstring{ToData()}{ToData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_fee_data_args}{Fee\+Data\+Args}} Terra\+Sharp.\+Core.\+Fee.\+To\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_fee_ae287b5b55fc98735fc712f0ac3a76541}\label{class_terra_sharp_1_1_core_1_1_fee_ae287b5b55fc98735fc712f0ac3a76541}} 
+\index{TerraSharp.Core.Fee@{TerraSharp.Core.Fee}!ToProto@{ToProto}}
+\index{ToProto@{ToProto}!TerraSharp.Core.Fee@{TerraSharp.Core.Fee}}
+\doxysubsubsection{\texorpdfstring{ToProto()}{ToProto()}}
+{\footnotesize\ttfamily byte\mbox{[}$\,$\mbox{]} Terra\+Sharp.\+Core.\+Fee.\+To\+Proto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_terra_sharp_1_1_core_1_1_fee_a3f5dc013e89858f5197fff18bd8fcd9b}\label{class_terra_sharp_1_1_core_1_1_fee_a3f5dc013e89858f5197fff18bd8fcd9b}} 
+\index{TerraSharp.Core.Fee@{TerraSharp.Core.Fee}!amount@{amount}}
+\index{amount@{amount}!TerraSharp.Core.Fee@{TerraSharp.Core.Fee}}
+\doxysubsubsection{\texorpdfstring{amount}{amount}}
+{\footnotesize\ttfamily readonly List$<$\mbox{\hyperlink{class_terra_sharp_1_1_core_1_1_coin}{Coin}}$>$ Terra\+Sharp.\+Core.\+Fee.\+amount}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Terra\+Rebels/terra-\/sharp/\+Terra\+Sharp/\+Core/\mbox{\hyperlink{_fee_8cs}{Fee.\+cs}}\end{DoxyCompactItemize}

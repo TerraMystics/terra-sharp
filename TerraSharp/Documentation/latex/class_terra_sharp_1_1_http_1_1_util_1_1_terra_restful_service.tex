@@ -1,0 +1,252 @@
+\hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service}{}\doxysection{Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service Class Reference}
+\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service}\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+
+
+ 
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_ab8c3d613620fcb7fddf1150f5374d1ce}{Terra\+Restful\+Service}} (\mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_http_client_service}{Terra\+Http\+Client\+Service}} client\+Service)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Restful\+Service class.  \end{DoxyCompactList}\item 
+async Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_a3b3b27f13c7cab110bc19e57595e4969}{Get\+Array\+Async}} (string uri, Cancellation\+Token\+Source token\+Source=null)
+\begin{DoxyCompactList}\small\item\em Retrieve information.  \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ TResult $>$ $>$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_a3d2a576def8310ca1c17388d82336871}{Get\+Async$<$ TResult $>$}} (string uri, Cancellation\+Token\+Source token\+Source=null)
+\begin{DoxyCompactList}\small\item\em Runs a GET operation via Http\+Client to retrieve information.  \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ T $>$ $>$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_adb9119f01b4c87278eaa25114ede1b6c}{Post\+Async$<$ T $>$}} (string endpoint, T data, Cancellation\+Token\+Source token\+Source=null)
+\begin{DoxyCompactList}\small\item\em Runs a POST operation via Http\+Client to send information.  \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ TReceive $>$ $>$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_a6895bf8db1900ef9a43ea3f926e0dc52}{Post\+Async$<$ TSend, TReceive $>$}} (string endpoint, TSend data, Cancellation\+Token\+Source token\+Source=null)
+\begin{DoxyCompactList}\small\item\em Runs a POST operation via Http\+Client to send information.  \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ T $>$ $>$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_aa32bd8a8a5b785e877e8ade06f90dfaa}{Put\+Async$<$ T $>$}} (string endpoint, T data, Cancellation\+Token\+Source token\+Source=null)
+\begin{DoxyCompactList}\small\item\em Runs a PUT operation via Http\+Client to send and update information.  \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ TReceive $>$ $>$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_aa5b4434a1093fb3a70cc3bf91d3d2f05}{Put\+Async$<$ TSend, TReceive $>$}} (string endpoint, TSend data, Cancellation\+Token\+Source token\+Source=null)
+\begin{DoxyCompactList}\small\item\em Runs a PUT operation via Http\+Client to send and update information.  \end{DoxyCompactList}\item 
+virtual async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ bool $>$ $>$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_aa8ed9ff8c3122ee8c8503af4becfe7dc}{Delete\+Async}} (string uri, Cancellation\+Token\+Source token\+Source=null)
+\begin{DoxyCompactList}\small\item\em Runs a DELETE operation via Http\+Client to delete information.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_ac0225cf5db988586a56d5d6223cf788c}{Force\+Disconnect\+Http\+Client}} ()
+\item 
+void \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_ab2779b7555e981de1ea01152cbf4e936}{Prepare\+Http\+Client\+From\+Consumer}} (Http\+Client http\+Client)
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_afd28377c7508d15a2d7f89201797356e}{Verify\+Remote\+Resource}} (string base\+Address)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_ab8c3d613620fcb7fddf1150f5374d1ce}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_ab8c3d613620fcb7fddf1150f5374d1ce}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!TerraRestfulService@{TerraRestfulService}}
+\index{TerraRestfulService@{TerraRestfulService}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{TerraRestfulService()}{TerraRestfulService()}}
+{\footnotesize\ttfamily Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Terra\+Restful\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_util_1_1_terra_http_client_service}{Terra\+Http\+Client\+Service}}}]{client\+Service }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the Restful\+Service class.  
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_aa8ed9ff8c3122ee8c8503af4becfe7dc}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_aa8ed9ff8c3122ee8c8503af4becfe7dc}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!DeleteAsync@{DeleteAsync}}
+\index{DeleteAsync@{DeleteAsync}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{DeleteAsync()}{DeleteAsync()}}
+{\footnotesize\ttfamily virtual async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ bool $>$ $>$ Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Delete\+Async (\begin{DoxyParamCaption}\item[{string}]{uri,  }\item[{Cancellation\+Token\+Source}]{token\+Source = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs a DELETE operation via Http\+Client to delete information.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & Uri to make request to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns result.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_ac0225cf5db988586a56d5d6223cf788c}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_ac0225cf5db988586a56d5d6223cf788c}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!ForceDisconnectHttpClient@{ForceDisconnectHttpClient}}
+\index{ForceDisconnectHttpClient@{ForceDisconnectHttpClient}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{ForceDisconnectHttpClient()}{ForceDisconnectHttpClient()}}
+{\footnotesize\ttfamily void Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Force\+Disconnect\+Http\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_a3b3b27f13c7cab110bc19e57595e4969}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_a3b3b27f13c7cab110bc19e57595e4969}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!GetArrayAsync@{GetArrayAsync}}
+\index{GetArrayAsync@{GetArrayAsync}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{GetArrayAsync()}{GetArrayAsync()}}
+{\footnotesize\ttfamily async Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Get\+Array\+Async (\begin{DoxyParamCaption}\item[{string}]{uri,  }\item[{Cancellation\+Token\+Source}]{token\+Source = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Retrieve information.  
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TResult} & Type we are expecting from result.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & Uri to make request to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the result.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_a3d2a576def8310ca1c17388d82336871}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_a3d2a576def8310ca1c17388d82336871}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!GetAsync$<$ TResult $>$@{GetAsync$<$ TResult $>$}}
+\index{GetAsync$<$ TResult $>$@{GetAsync$<$ TResult $>$}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{GetAsync$<$ TResult $>$()}{GetAsync< TResult >()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ TResult $>$ $>$ Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Get\+Async$<$ TResult $>$ (\begin{DoxyParamCaption}\item[{string}]{uri,  }\item[{Cancellation\+Token\+Source}]{token\+Source = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Runs a GET operation via Http\+Client to retrieve information.  
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TResult} & Type we are expecting from result.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & Uri to make request to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the result.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_adb9119f01b4c87278eaa25114ede1b6c}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_adb9119f01b4c87278eaa25114ede1b6c}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!PostAsync$<$ T $>$@{PostAsync$<$ T $>$}}
+\index{PostAsync$<$ T $>$@{PostAsync$<$ T $>$}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{PostAsync$<$ T $>$()}{PostAsync< T >()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ T $>$ $>$ Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Post\+Async$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{endpoint,  }\item[{T}]{data,  }\item[{Cancellation\+Token\+Source}]{token\+Source = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Runs a POST operation via Http\+Client to send information.  
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of object data we are sending.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em endpoint} & API Endpoint.\\
+\hline
+{\em data} & Data to send.\\
+\hline
+{\em header} & Additional header information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rest Response.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_a6895bf8db1900ef9a43ea3f926e0dc52}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_a6895bf8db1900ef9a43ea3f926e0dc52}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!PostAsync$<$ TSend, TReceive $>$@{PostAsync$<$ TSend, TReceive $>$}}
+\index{PostAsync$<$ TSend, TReceive $>$@{PostAsync$<$ TSend, TReceive $>$}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{PostAsync$<$ TSend, TReceive $>$()}{PostAsync< TSend, TReceive >()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ TReceive $>$ $>$ Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Post\+Async$<$ TSend, TReceive $>$ (\begin{DoxyParamCaption}\item[{string}]{endpoint,  }\item[{TSend}]{data,  }\item[{Cancellation\+Token\+Source}]{token\+Source = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Runs a POST operation via Http\+Client to send information.  
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TSend} & Type of object data we are sending.\\
+\hline
+{\em TReceive} & Type we expect to receive from response.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em endpoint} & Api Endpoint.\\
+\hline
+{\em data} & Data to send.\\
+\hline
+{\em header} & Additional header information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Response from API.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_ab2779b7555e981de1ea01152cbf4e936}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_ab2779b7555e981de1ea01152cbf4e936}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!PrepareHttpClientFromConsumer@{PrepareHttpClientFromConsumer}}
+\index{PrepareHttpClientFromConsumer@{PrepareHttpClientFromConsumer}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{PrepareHttpClientFromConsumer()}{PrepareHttpClientFromConsumer()}}
+{\footnotesize\ttfamily void Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Prepare\+Http\+Client\+From\+Consumer (\begin{DoxyParamCaption}\item[{Http\+Client}]{http\+Client }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_aa32bd8a8a5b785e877e8ade06f90dfaa}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_aa32bd8a8a5b785e877e8ade06f90dfaa}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!PutAsync$<$ T $>$@{PutAsync$<$ T $>$}}
+\index{PutAsync$<$ T $>$@{PutAsync$<$ T $>$}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{PutAsync$<$ T $>$()}{PutAsync< T >()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ T $>$ $>$ Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Put\+Async$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{endpoint,  }\item[{T}]{data,  }\item[{Cancellation\+Token\+Source}]{token\+Source = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Runs a PUT operation via Http\+Client to send and update information.  
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TSend} & Type of object data we are sending/updating.\\
+\hline
+{\em TReceive} & Type we expect to receive from response.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em endpoint} & API Endpoint.\\
+\hline
+{\em data} & Data to send and update.\\
+\hline
+{\em header} & Additional header information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rest Response.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_aa5b4434a1093fb3a70cc3bf91d3d2f05}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_aa5b4434a1093fb3a70cc3bf91d3d2f05}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!PutAsync$<$ TSend, TReceive $>$@{PutAsync$<$ TSend, TReceive $>$}}
+\index{PutAsync$<$ TSend, TReceive $>$@{PutAsync$<$ TSend, TReceive $>$}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{PutAsync$<$ TSend, TReceive $>$()}{PutAsync< TSend, TReceive >()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_terra_sharp_1_1_http_1_1_terra_restful_response}{Terra\+Restful\+Response}}$<$ TReceive $>$ $>$ Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Put\+Async$<$ TSend, TReceive $>$ (\begin{DoxyParamCaption}\item[{string}]{endpoint,  }\item[{TSend}]{data,  }\item[{Cancellation\+Token\+Source}]{token\+Source = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Runs a PUT operation via Http\+Client to send and update information.  
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TSend} & Type of object data we are sending/updating.\\
+\hline
+{\em TReceive} & Type we expect to receive from response.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em endpoint} & API Endpoint.\\
+\hline
+{\em data} & Data to send and update.\\
+\hline
+{\em header} & Additional header information.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rest Response.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_afd28377c7508d15a2d7f89201797356e}\label{class_terra_sharp_1_1_http_1_1_util_1_1_terra_restful_service_afd28377c7508d15a2d7f89201797356e}} 
+\index{TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}!VerifyRemoteResource@{VerifyRemoteResource}}
+\index{VerifyRemoteResource@{VerifyRemoteResource}!TerraSharp.Http.Util.TerraRestfulService@{TerraSharp.Http.Util.TerraRestfulService}}
+\doxysubsubsection{\texorpdfstring{VerifyRemoteResource()}{VerifyRemoteResource()}}
+{\footnotesize\ttfamily async Task$<$ bool $>$ Terra\+Sharp.\+Http.\+Util.\+Terra\+Restful\+Service.\+Verify\+Remote\+Resource (\begin{DoxyParamCaption}\item[{string}]{base\+Address }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Terra\+Rebels/terra-\/sharp/\+Terra\+Sharp/\+Http/\+Util/\mbox{\hyperlink{_terra_restful_service_8cs}{Terra\+Restful\+Service.\+cs}}\end{DoxyCompactItemize}

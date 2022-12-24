@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+	<metadata>
+		<id>TerraSharp.Rest</id>
+		<version>1.0.3</version>
+		<title>TerraSharp.Rest</title>
+        <icon>TerraRebels.png</icon>
+		<authors>terrarebels</authors>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<license type="expression">MIT</license>
+		<projectUrl>https://github.com/terra-rebels/terra-sharp</projectUrl>
+		<description>Rest Services and Rest Definition Files/Implementations for the Terra LUNC/USTC Ecosystem</description>
+		<releaseNotes>Package Update</releaseNotes>
+		<copyright>2022</copyright>
+		<tags></tags>
+	</metadata>
+
+	<files>
+    <file src="bin\Release\netstandard2.0\TerraSharp.Rest.Legacy.dll" target="lib\netstandard2.0\TerraSharp.Rest.Legacy.dll"/>
+		<file src="TerraRebels.png" target="TerraRebels.png"/>
+	</files>
+</package>
