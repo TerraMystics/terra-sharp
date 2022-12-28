@@ -144,14 +144,9 @@ async void BroadcastTransaction() {
 }
 ```
 
-## Requirements for Legacy Versions of .Net (Standard 2.0 or Above)?
-
-If you are building for a project that doesn't target .net 6, please use the following package [Legacy Package](https://www.nuget.org/packages/Terra.Microsoft.Client/1.0.1.Legacy).
-
-
 ## Require Payment Integration for LUNC/USTC?
 
-If you need to integrate with an external payment system or gateway like Apple/Google in app purchases, please make sure to install the [following library](https://github.com/terra-rebels/Terra.Microsoft.Client-InAppPurchases) in your project.
+If you need to integrate with an external payment system or gateway like Apple/Google in app purchases, please make sure to install the [following library](https://github.com/TerraMystics/FiatToLUNC) in your project.
 
 
 ## Terra.Microsoft.Client For Unity Developers
