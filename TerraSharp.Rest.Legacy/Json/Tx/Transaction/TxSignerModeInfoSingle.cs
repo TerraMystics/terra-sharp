@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.third_party.proto.cosmos.tx.signing.v1beta1;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.signing.v1beta1;
 
-namespace TerraSharp.Rest.Tx.Transaction
+namespace Terra.Microsoft.Rest.Tx.Transaction
 {
     public class TxSignerModeInfoSingle
     {

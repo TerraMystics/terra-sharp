@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Tx.Transaction.Response
+﻿namespace Terra.Microsoft.Rest.Tx.Transaction.Response
 {
     public class TxGasInfoResponse
     {

@@ -1,10 +1,10 @@
 ﻿using Ics23;
 using tendermint.types;
-using TerraProto.CSharp.third_party.proto.ibc.core.client.v1;
-using TerraProto.CSharp.third_party.proto.ibc.core.commitment.v1;
-using TerraProto.CSharp.third_party.proto.tendermint.types;
+using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.client.v1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.commitment.v1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.types;
 
-namespace TerraProto.CSharp.third_party.proto.ibc.lightclients.tendermint.v1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.ibc.lightclients.tendermint.v1
 {
 
     [global::ProtoBuf.ProtoContract()]

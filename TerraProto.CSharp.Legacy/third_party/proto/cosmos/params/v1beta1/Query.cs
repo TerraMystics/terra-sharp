@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.third_party.proto.ibc.applications.transfer.v1;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.applications.transfer.v1;
 
-namespace TerraProto.CSharp.third_party.proto.cosmos.iparams.v1beta1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.iparams.v1beta1
 {
     public partial interface IQuery
     {

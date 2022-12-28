@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TerraSharp.Rest.Tx.Transaction
+namespace Terra.Microsoft.Rest.Tx.Transaction
 {
     public class TxSearchOptions : PaginationOptions
     {

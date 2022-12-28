@@ -1,10 +1,10 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Newtonsoft.Json;
-using TerraNetExtensions.ProtoBufs;
-using TerraNetExtensions.StringExt;
-using TerraProto.CSharp.third_party.proto.cosmos.crypto.secp256k1;
+using Terra.Microsoft.Extensions.ProtoBufs;
+using Terra.Microsoft.Extensions.StringExt;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.crypto.secp256k1;
 
-namespace TerraProto.CSharp.proto.keys
+namespace Terra.Microsoft.ProtoBufs.proto.keys
 {
     [ProtoBuf.ProtoContract()]
     public class KeysDto

@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Configuration.Environment
+﻿namespace Terra.Microsoft.Rest.Configuration.Environment
 {
     public static class TerraClientConfiguration
     {

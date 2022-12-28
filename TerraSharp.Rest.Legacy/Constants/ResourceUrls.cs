@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest
+﻿namespace Terra.Microsoft.Rest
 {
     /// <summary>
     /// Resource Urls used to access the Terra Station's Apis

@@ -1,8 +1,8 @@
 ﻿using tendermint.types;
-using TerraProto.CSharp.third_party.proto.cosmos.ibase.query.v1beta1;
-using TerraProto.CSharp.third_party.proto.tendermint.types;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.ibase.query.v1beta1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.types;
 
-namespace TerraProto.CSharp.third_party.proto.cosmos.ibase.tendermint.v1beta1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.ibase.tendermint.v1beta1
 {
 
     [global::ProtoBuf.ProtoContract()]

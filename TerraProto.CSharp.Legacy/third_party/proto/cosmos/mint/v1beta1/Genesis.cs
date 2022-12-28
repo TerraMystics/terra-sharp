@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TerraProto.CSharp.third_party.proto.cosmos.mint.v1beta1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.mint.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class GenesisState : global::ProtoBuf.IExtensible

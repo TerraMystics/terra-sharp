@@ -1,8 +1,7 @@
-﻿using TerraNetExtensions.StringExt;
+﻿using Terra.Microsoft.Extensions.StringExt;
+using Terra.Microsoft.Rest.Tx.Transaction;
 
-using TerraSharp.Rest.Tx.Transaction;
-
-namespace TerraSharp.Rest.Tx.Block
+namespace Terra.Microsoft.Rest.Tx.Block
 {
     public class BlockTxBroadcastResultDataArgs : Block
     {

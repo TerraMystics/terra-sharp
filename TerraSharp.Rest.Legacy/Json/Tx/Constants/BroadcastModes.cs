@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Tx.Constants
+﻿namespace Terra.Microsoft.Rest.Tx.Constants
 {
     public class BroadcastModes
     {

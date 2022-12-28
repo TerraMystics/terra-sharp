@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.third_party.proto.cosmos.gov.v1beta1;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.gov.v1beta1;
 
-namespace TerraSharp.Rest.Converters
+namespace Terra.Microsoft.Rest.Converters
 {
     public static class ProposalStatusConverters
     {

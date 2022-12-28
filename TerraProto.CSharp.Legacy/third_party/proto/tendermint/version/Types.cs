@@ -1,4 +1,4 @@
-﻿namespace TerraProto.CSharp.third_party.proto.tendermint.version
+﻿namespace Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.version
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class App : global::ProtoBuf.IExtensible

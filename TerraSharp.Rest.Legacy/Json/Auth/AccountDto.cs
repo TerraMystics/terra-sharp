@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using TerraProto.CSharp.proto.keys;
+using Terra.Microsoft.ProtoBufs.proto.keys;
 
-namespace TerraSharp.Rest.Auth
+namespace Terra.Microsoft.Rest.Auth
 {
     public class AccountDto
     {

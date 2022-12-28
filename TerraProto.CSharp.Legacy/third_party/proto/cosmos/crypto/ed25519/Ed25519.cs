@@ -1,4 +1,4 @@
-﻿namespace TerraProto.CSharp.third_party.proto.cosmos.crypto.ed25519
+﻿namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.crypto.ed25519
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class PubKey : global::ProtoBuf.IExtensible

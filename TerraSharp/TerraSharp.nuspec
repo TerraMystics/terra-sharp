@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
 	<metadata>
-		<id>TerraSharp</id>
-		<version>1.1.6</version>
-		<title>TerraSharp</title>
-        <icon>TerraRebels.png</icon>
-		<authors>terrarebels</authors>
+		<id>Terra.Microsoft.Client</id>
+		<version>1.0.1</version>
+		<title>Terra.Microsoft.Client</title>
+    <icon>TerraMystic.png</icon>
+		<authors>Dan Gerchcovich</authors>
 		<requireLicenseAcceptance>true</requireLicenseAcceptance>
 		<license type="expression">MIT</license>
-		<projectUrl>https://github.com/terra-rebels/terra-sharp</projectUrl>
-		<description>Official C# Library for Communicating with the Terra LUNC/USTC Blockchain</description>
+		<projectUrl>https://github.com/TerraMystics/terra-sharp</projectUrl>
+		<description>Official C# Library for Communicating with the Terra LUNC/USTC/LUNA2 Blockchain</description>
 		<releaseNotes>Package Update</releaseNotes>
 		<copyright>2022</copyright>
 		<tags></tags>
 	</metadata>
 
 	<files>
-		<file src="bin\Release\net6.0\TerraSharp.dll" target="lib\net6.0\TerraSharp.dll"/>
-		<file src="TerraRebels.png" target="TerraRebels.png"/>
+		<file src="bin\Release\netstandard2.0\TerraSharp.dll" target="lib\netstandard2.0\TerraSharp.dll"/>
+		<file src="TerraMystic.png" target="TerraMystic.png"/>
 	</files>
 </package>

@@ -1,4 +1,4 @@
-﻿namespace TerraProto.CSharp.third_party.proto.cosmos.authz.v1beta1
+﻿namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.authz.v1beta1
 {
     public partial interface IMsg
     {

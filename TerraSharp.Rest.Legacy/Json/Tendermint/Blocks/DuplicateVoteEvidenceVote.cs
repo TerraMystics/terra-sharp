@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.third_party.proto.tendermint.types;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.types;
 
-namespace TerraSharp.Rest.Tendermint.Blocks
+namespace Terra.Microsoft.Rest.Tendermint.Blocks
 {
     public class DuplicateVoteEvidenceVote
     {

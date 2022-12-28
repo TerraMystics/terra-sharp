@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Constants
+﻿namespace Terra.Microsoft.Rest.Constants
 {
     public static class HttpBehaviourConstants
     {

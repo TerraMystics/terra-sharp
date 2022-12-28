@@ -1,8 +1,8 @@
 ﻿using Google.Protobuf.WellKnownTypes;
-using TerraProto.CSharp.proto.keys;
-using TerraSharp.Rest.Tx.Transaction;
+using Terra.Microsoft.ProtoBufs.proto.keys;
+using Terra.Microsoft.Rest.Tx.Transaction;
 
-namespace TerraSharp.Rest.Tx.Block
+namespace Terra.Microsoft.Rest.Tx.Block
 {
     public class SignerData
     {

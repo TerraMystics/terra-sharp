@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TerraSharp.Rest.Staking
+namespace Terra.Microsoft.Rest.Staking
 {
     public class ValConsPublicKeyCommonArgsJSON
     {

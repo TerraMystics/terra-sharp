@@ -8,9 +8,9 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using TerraSharp.Rest;
+using Terra.Microsoft.Rest;
 
-namespace TerraSharp.Rest.Util
+namespace Terra.Microsoft.Rest.Util
 {
     /// <inheritdoc/>
     public class TerraRestfulService

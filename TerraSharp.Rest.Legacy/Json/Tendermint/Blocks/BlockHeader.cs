@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TerraSharp.Rest.Tendermint.Blocks
+namespace Terra.Microsoft.Rest.Tendermint.Blocks
 {
     public class BlockHeader
     {

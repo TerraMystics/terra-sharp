@@ -1,7 +1,7 @@
 ﻿
 using cosmos.ibase.v1beta1;
 
-namespace TerraProto.CSharp.proto.treasury.v1beta1
+namespace Terra.Microsoft.ProtoBufs.proto.treasury.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class GenesisState : global::ProtoBuf.IExtensible

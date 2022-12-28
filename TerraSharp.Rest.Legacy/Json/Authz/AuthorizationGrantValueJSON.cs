@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TerraSharp.Rest.Authz
+namespace Terra.Microsoft.Rest.Authz
 {
     public class AuthorizationGrantValueJSON
     {

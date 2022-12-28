@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Oracle
+﻿namespace Terra.Microsoft.Rest.Oracle
 {
     public class OracleApiValidatorApi
     {

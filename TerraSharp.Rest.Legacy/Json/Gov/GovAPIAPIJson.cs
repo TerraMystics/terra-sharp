@@ -1,6 +1,6 @@
-﻿using TerraSharp.Rest.FeeGrant;
+﻿using Terra.Microsoft.Rest.FeeGrant;
 
-namespace TerraSharp.Rest.Gov
+namespace Terra.Microsoft.Rest.Gov
 {
     public class GovAPIAPIJson
     {

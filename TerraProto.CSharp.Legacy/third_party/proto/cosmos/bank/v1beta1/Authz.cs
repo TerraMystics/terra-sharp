@@ -1,6 +1,6 @@
 ﻿using cosmos.ibase.v1beta1;
 
-namespace TerraProto.CSharp.third_party.proto.cosmos.bank.v1beta1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.bank.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class SendAuthorization : global::ProtoBuf.IExtensible

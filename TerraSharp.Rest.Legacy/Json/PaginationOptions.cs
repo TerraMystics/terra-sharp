@@ -1,7 +1,7 @@
 ﻿
-using TerraProto.CSharp.third_party.proto.cosmos.tx.v1beta1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.v1beta1;
 
-namespace TerraSharp.Rest
+namespace Terra.Microsoft.Rest
 {
     public class PaginationOptions
     {

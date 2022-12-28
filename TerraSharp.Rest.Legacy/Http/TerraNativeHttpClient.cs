@@ -1,7 +1,7 @@
 ﻿using ModernHttpClient;
 using System.Net.Http;
 
-namespace TerraSharp.Rest
+namespace Terra.Microsoft.Rest
 {
     public class TerraNativeHttpClient : HttpClient
     {

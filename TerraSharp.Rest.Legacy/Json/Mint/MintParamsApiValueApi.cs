@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Mint
+﻿namespace Terra.Microsoft.Rest.Mint
 {
     public class MintParamsApiValueApi
     {

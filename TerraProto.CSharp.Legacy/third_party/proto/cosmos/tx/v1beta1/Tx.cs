@@ -4,11 +4,11 @@ using ProtoBuf;
 using System.ComponentModel;
 using System.Xml.Linq;
 using terra.market.v1beta1;
-using TerraProto.CSharp.proto.keys;
-using TerraProto.CSharp.third_party.proto.cosmos.crypto.secp256k1;
-using TerraProto.CSharp.third_party.proto.cosmos.tx.signing.v1beta1;
+using Terra.Microsoft.ProtoBufs.proto.keys;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.crypto.secp256k1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.signing.v1beta1;
 
-namespace TerraProto.CSharp.third_party.proto.cosmos.tx.v1beta1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class Tx : global::ProtoBuf.IExtensible

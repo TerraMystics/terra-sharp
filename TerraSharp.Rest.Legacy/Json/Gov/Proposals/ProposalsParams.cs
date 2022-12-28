@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Gov.Proposals
+﻿namespace Terra.Microsoft.Rest.Gov.Proposals
 {
     public class ProposalsParams
     {

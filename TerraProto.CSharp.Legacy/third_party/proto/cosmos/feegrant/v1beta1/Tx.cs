@@ -1,4 +1,4 @@
-﻿namespace TerraProto.CSharp.third_party.proto.cosmos.feegrant.v1beta1
+﻿namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.feegrant.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class MsgGrantAllowance : global::ProtoBuf.IExtensible

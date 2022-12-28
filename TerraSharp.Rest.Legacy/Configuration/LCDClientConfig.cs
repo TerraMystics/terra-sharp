@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Configuration
+﻿namespace Terra.Microsoft.Rest.Configuration
 {
     public class LCDClientConfig
     {

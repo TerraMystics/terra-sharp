@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.third_party.proto.ibc.core.client.v1;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.client.v1;
 
-namespace TerraProto.CSharp.third_party.proto.ibc.lightclients.localhost.v1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.ibc.lightclients.localhost.v1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class ClientState : global::ProtoBuf.IExtensible

@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest
+﻿namespace Terra.Microsoft.Rest
 {
     /// <summary>
     /// Class to use to pass responses with data collected from modern httpClient Native.

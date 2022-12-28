@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using TerraProto.CSharp.third_party.proto.cosmos.gov.v1beta1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.gov.v1beta1;
 
-namespace TerraSharp.Rest.Tx.Transaction
+namespace Terra.Microsoft.Rest.Tx.Transaction
 {
     public class TxBodyJSON
     {

@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
-using TerraProto.CSharp.third_party.proto.cosmos.gov.v1beta1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.gov.v1beta1;
 
-namespace TerraSharp.Rest.Gov.Proposals
+namespace Terra.Microsoft.Rest.Gov.Proposals
 {
     public class ProposalsResponseContainerJSON
     {

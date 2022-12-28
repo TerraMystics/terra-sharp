@@ -1,7 +1,7 @@
-﻿using TerraProto.CSharp.third_party.proto.cosmos.tx.v1beta1;
-using TerraSharp.Rest.Tx.Transaction.Response;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.v1beta1;
+using Terra.Microsoft.Rest.Tx.Transaction.Response;
 
-namespace TerraSharp.Rest.Tx.Transaction
+namespace Terra.Microsoft.Rest.Tx.Transaction
 {
     public class TxContainerJSON
     {

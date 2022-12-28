@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace TerraSharp.Rest.Converters
+namespace Terra.Microsoft.Rest.Converters
 {
     /// <summary>
     /// TimeSpans are not serialized consistently depending on what properties are present. So this 

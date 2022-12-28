@@ -1,8 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <UserSecretsId>0249f19f-c28c-4a0b-8bf4-2ba7294e8350</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,8 +13,8 @@
     <PackageReference Include="Polly.Extensions.Http" Version="3.0.0" />
     <PackageReference Include="protobuf-net" Version="3.1.22" />
     <PackageReference Include="Protobuf.Grpc" Version="1.0.170" />
-    <PackageReference Include="TerraNetExtensions.Legacy" Version="1.0.0" />
-    <PackageReference Include="TerraProtoBufs" Version="1.0.3" />
+    <PackageReference Include="Terra.Microsoft.Extensions" Version="1.0.0" />
+    <PackageReference Include="Terra.Microsoft.ProtoBufs" Version="1.0.1" />
   </ItemGroup>
 
 </Project>

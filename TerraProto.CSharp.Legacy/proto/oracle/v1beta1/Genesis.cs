@@ -1,4 +1,4 @@
-﻿namespace TerraProto.CSharp.proto.oracle.v1beta1
+﻿namespace Terra.Microsoft.ProtoBufs.proto.oracle.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class GenesisState : global::ProtoBuf.IExtensible

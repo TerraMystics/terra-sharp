@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest
+﻿namespace Terra.Microsoft.Rest
 {
     /// <summary>
     /// Chain IDs & Keys used for communicating with the Blockchain

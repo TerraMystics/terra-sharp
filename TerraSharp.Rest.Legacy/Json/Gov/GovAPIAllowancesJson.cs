@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Gov
+﻿namespace Terra.Microsoft.Rest.Gov
 {
     public class GovAPIAllowancesJson
     {

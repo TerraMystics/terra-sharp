@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.third_party.proto.cosmos.vesting.v1beta1;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.vesting.v1beta1;
 
-namespace TerraProto.CSharp.proto.vesting.v1beta1
+namespace Terra.Microsoft.ProtoBufs.proto.vesting.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class LazyGradedVestingAccount : global::ProtoBuf.IExtensible

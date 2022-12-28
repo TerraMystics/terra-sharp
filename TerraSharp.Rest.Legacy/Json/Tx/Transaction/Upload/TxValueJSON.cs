@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TerraSharp.Rest.Tx.Transaction.Upload
+namespace Terra.Microsoft.Rest.Tx.Transaction.Upload
 {
     public class TxUploadValueJSON
     {

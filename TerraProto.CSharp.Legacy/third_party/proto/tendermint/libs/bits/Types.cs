@@ -1,4 +1,4 @@
-﻿namespace TerraProto.CSharp.third_party.proto.tendermint.libs.bits
+﻿namespace Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.libs.bits
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class BitArray : global::ProtoBuf.IExtensible

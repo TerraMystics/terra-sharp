@@ -1,4 +1,4 @@
-﻿namespace TerraProto.CSharp.third_party.proto.ibc.core.client.v1
+﻿namespace Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.client.v1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class GenesisState : global::ProtoBuf.IExtensible

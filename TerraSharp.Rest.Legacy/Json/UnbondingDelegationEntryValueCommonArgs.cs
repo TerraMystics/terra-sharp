@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace TerraSharp.Rest
+namespace Terra.Microsoft.Rest
 {
     public class UnbondingDelegationEntryValueCommonArgsJSON
     {

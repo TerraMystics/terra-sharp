@@ -1,7 +1,7 @@
 ﻿using tendermint.types;
-using TerraProto.CSharp.third_party.proto.tendermint.version;
+using Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.version;
 
-namespace TerraProto.CSharp.third_party.proto.tendermint.types
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.types
 {
 
     [global::ProtoBuf.ProtoContract()]

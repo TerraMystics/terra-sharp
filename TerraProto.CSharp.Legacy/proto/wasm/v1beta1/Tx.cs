@@ -1,6 +1,6 @@
 ﻿using cosmos.ibase.v1beta1;
 
-namespace TerraProto.CSharp.proto.wasm.v1beta1
+namespace Terra.Microsoft.ProtoBufs.proto.wasm.v1beta1
 {
     public partial interface IMsg
     {

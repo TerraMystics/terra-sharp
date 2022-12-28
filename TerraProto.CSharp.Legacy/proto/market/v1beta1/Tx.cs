@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TerraProto.CSharp.proto.market.v1beta1
+namespace Terra.Microsoft.ProtoBufs.proto.market.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class MsgSwap : global::ProtoBuf.IExtensible

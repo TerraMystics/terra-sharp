@@ -1,6 +1,6 @@
-﻿using TerraSharp.Rest.Tx.Transaction.Response;
+﻿using Terra.Microsoft.Rest.Tx.Transaction.Response;
 
-namespace TerraSharp.Rest.Tx.Transaction.Upload
+namespace Terra.Microsoft.Rest.Tx.Transaction.Upload
 {
     public class TxUploadContainerJSON
     {

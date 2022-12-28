@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Treasury
+﻿namespace Terra.Microsoft.Rest.Treasury
 {
     public class TreasuryTaxSeignorage
     {

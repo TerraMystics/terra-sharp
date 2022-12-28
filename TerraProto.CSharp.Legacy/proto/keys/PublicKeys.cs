@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TerraProto.CSharp.proto.keys
+namespace Terra.Microsoft.ProtoBufs.proto.keys
 {
     [ProtoBuf.ProtoContract()]
     public class PublicKeys

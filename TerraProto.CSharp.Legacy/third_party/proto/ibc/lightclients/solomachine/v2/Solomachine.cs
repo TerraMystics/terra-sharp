@@ -1,7 +1,7 @@
-﻿using TerraProto.CSharp.third_party.proto.ibc.core.channel.v1;
-using TerraProto.CSharp.third_party.proto.ibc.core.connection.v1;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.channel.v1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.connection.v1;
 
-namespace TerraProto.CSharp.third_party.proto.ibc.lightclients.solomachine.v2
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.ibc.lightclients.solomachine.v2
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class ClientState : global::ProtoBuf.IExtensible

@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Bank
+﻿namespace Terra.Microsoft.Rest.Bank
 {
     public class BankInfoApiJson
     {

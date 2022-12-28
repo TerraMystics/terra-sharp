@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.IBCTransfer
+﻿namespace Terra.Microsoft.Rest.IBCTransfer
 {
     public class IBCTransferParams
     {

@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.proto.keys;
+﻿using Terra.Microsoft.ProtoBufs.proto.keys;
 
-namespace TerraSharp.Rest.Tx.Transaction
+namespace Terra.Microsoft.Rest.Tx.Transaction
 {
     public class TxSignerInfo
     {

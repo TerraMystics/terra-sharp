@@ -1,7 +1,7 @@
 ﻿
-using TerraProto.CSharp.third_party.proto.ibc.core.commitment.v1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.commitment.v1;
 
-namespace TerraProto.CSharp.third_party.proto.ibc.core.connection.v1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.connection.v1
 {
     [global::ProtoBuf.ProtoContract()]
     public enum State

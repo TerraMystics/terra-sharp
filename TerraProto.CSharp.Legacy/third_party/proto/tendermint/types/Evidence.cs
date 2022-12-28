@@ -4,7 +4,7 @@
 //   Input: my.proto
 // </auto-generated>
 
-using TerraProto.CSharp.third_party.proto.tendermint.types;
+using Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.types;
 
 #region Designer generated code
 #pragma warning disable CS0612, CS0618, CS1591, CS3021, IDE0079, IDE1006, RCS1036, RCS1057, RCS1085, RCS1192

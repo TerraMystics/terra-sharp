@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Marketing
+﻿namespace Terra.Microsoft.Rest.Marketing
 {
     public class MarketingParamsValueApi
     {

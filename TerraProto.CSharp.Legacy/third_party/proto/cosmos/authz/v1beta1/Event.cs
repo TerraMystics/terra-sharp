@@ -1,4 +1,4 @@
-﻿namespace TerraProto.CSharp.third_party.proto.cosmos.authz.v1beta1
+﻿namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.authz.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class EventGrant : global::ProtoBuf.IExtensible

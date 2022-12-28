@@ -1,7 +1,7 @@
 ﻿using cosmos.ibase.v1beta1;
 using terra.market.v1beta1;
 
-namespace TerraProto.CSharp.proto.market.v1beta1
+namespace Terra.Microsoft.ProtoBufs.proto.market.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class QuerySwapRequest : global::ProtoBuf.IExtensible

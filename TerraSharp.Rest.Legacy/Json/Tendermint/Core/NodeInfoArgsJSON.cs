@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Tendermint.Core
+﻿namespace Terra.Microsoft.Rest.Tendermint.Core
 {
     public class NodeInfoArgsJSON
     {

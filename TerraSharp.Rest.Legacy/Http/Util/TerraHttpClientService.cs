@@ -3,9 +3,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
-using TerraSharp.Rest.Constants;
+using Terra.Microsoft.Rest.Constants;
 
-namespace TerraSharp.Rest.Util
+namespace Terra.Microsoft.Rest.Util
 {
     public class TerraHttpClientService
     {

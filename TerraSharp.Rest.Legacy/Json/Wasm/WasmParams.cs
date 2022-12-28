@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Wasm
+﻿namespace Terra.Microsoft.Rest.Wasm
 {
     public class WasmParams
     {

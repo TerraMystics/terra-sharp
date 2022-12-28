@@ -1,6 +1,6 @@
 ﻿using tendermint.types;
 
-namespace TerraProto.CSharp.third_party.proto.tendermint.types
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.types
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class Block : global::ProtoBuf.IExtensible

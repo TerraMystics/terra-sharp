@@ -1,7 +1,7 @@
 ﻿using cosmos.ibase.v1beta1;
 using terra.market.v1beta1;
 
-namespace TerraProto.CSharp.third_party.proto.cosmos.staking.v1beta1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.staking.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public enum AuthorizationType

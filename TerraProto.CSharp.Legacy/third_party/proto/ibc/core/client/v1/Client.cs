@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TerraProto.CSharp.third_party.proto.cosmos.upgrade.v1beta1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.upgrade.v1beta1;
 
-namespace TerraProto.CSharp.third_party.proto.ibc.core.client.v1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.client.v1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class IdentifiedClientState : global::ProtoBuf.IExtensible

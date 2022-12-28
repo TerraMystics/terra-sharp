@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Extensions
+﻿namespace Terra.Microsoft.Rest.Extensions
 {
     public static class PaginationOptionExtensions
     {

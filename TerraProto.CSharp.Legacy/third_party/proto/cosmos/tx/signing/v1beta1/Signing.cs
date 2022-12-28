@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.third_party.proto.cosmos.tx.v1beta1;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.v1beta1;
 
-namespace TerraProto.CSharp.third_party.proto.cosmos.tx.signing.v1beta1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.signing.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class SignatureDescriptors : global::ProtoBuf.IExtensible

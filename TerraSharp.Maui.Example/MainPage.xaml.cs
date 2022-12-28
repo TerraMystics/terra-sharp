@@ -1,7 +1,7 @@
 ﻿using TerraSharp.Core.Bank.Msgs;
 using TerraSharp.Core.Constants;
 using TerraSharp.Key;
-using TerraSharp.Rest.Tx.Block;
+using Terra.Microsoft.Rest.Tx.Block;
 
 namespace TerraSharp.Maui.Example
 {

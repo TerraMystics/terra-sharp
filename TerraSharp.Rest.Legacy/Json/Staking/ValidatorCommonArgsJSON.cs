@@ -1,7 +1,7 @@
 ﻿using System;
-using TerraProto.CSharp.third_party.proto.cosmos.staking.v1beta1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.staking.v1beta1;
 
-namespace TerraSharp.Rest.Staking
+namespace Terra.Microsoft.Rest.Staking
 {
     public class ValidatorCommonArgsJSON
     {

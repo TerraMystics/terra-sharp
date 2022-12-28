@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>Terra.Microsoft.Extensions</id>
+    <version>1.0.1</version>
+    <title>Terra.Microsoft.Extensions</title>
+    <icon>TerraMystic.png</icon>
+    <authors>Dan Gerchcovich</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/TerraMystics/terra-sharp</projectUrl>
+    <description>Common Extensions and Helpers for the Terra Ecosystem</description>
+    <releaseNotes>Package Update</releaseNotes>
+    <copyright>2022</copyright>
+    <tags></tags>
+  </metadata>
+
+  <files>
+    <file src="bin\Release\netstandard2.0\Terra.Microsoft.Extensions.dll" target="lib\netstandard2.0\Terra.Microsoft.Extensions.dll"/>
+    <file src="TerraMystic.png" target="TerraMystic.png"/>
+  </files>
+</package>

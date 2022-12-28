@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Auth
+﻿namespace Terra.Microsoft.Rest.Auth
 {
     public class AccountDtoContainer
     {

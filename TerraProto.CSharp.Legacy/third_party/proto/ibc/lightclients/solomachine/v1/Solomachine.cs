@@ -1,9 +1,9 @@
 ﻿
 
-using TerraProto.CSharp.third_party.proto.ibc.core.channel.v1;
-using TerraProto.CSharp.third_party.proto.ibc.core.connection.v1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.channel.v1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.connection.v1;
 
-namespace TerraProto.CSharp.third_party.proto.ibc.lightclients.solomachine.v1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.ibc.lightclients.solomachine.v1
 {
 
     [global::ProtoBuf.ProtoContract()]

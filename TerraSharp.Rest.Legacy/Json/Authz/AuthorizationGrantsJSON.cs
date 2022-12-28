@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Authz
+﻿namespace Terra.Microsoft.Rest.Authz
 {
     public class AuthorizationGrantsJSON
     {

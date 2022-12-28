@@ -1,7 +1,7 @@
 ﻿using cosmos.ibase.v1beta1;
-using TerraProto.CSharp.third_party.proto.ibc.core.client.v1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.client.v1;
 
-namespace TerraProto.CSharp.third_party.proto.ibc.applications.transfer.v1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.ibc.applications.transfer.v1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class MsgTransfer : global::ProtoBuf.IExtensible

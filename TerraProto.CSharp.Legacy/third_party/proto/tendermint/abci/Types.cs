@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tendermint.types;
-using TerraProto.CSharp.third_party.proto.tendermint.types;
+using Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.types;
 
-namespace TerraProto.CSharp.third_party.proto.tendermint.abci
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.tendermint.abci
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class Request : global::ProtoBuf.IExtensible

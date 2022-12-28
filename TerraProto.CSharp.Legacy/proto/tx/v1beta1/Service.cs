@@ -1,7 +1,7 @@
 ﻿using cosmos.ibase.v1beta1;
-using TerraProto.CSharp.third_party.proto.cosmos.tx.v1beta1;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.v1beta1;
 
-namespace TerraProto.CSharp.proto.tx.v1beta1
+namespace Terra.Microsoft.ProtoBufs.proto.tx.v1beta1
 {
     public partial interface IService
     {

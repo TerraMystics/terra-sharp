@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Classic
+﻿namespace Terra.Microsoft.Rest.Classic
 {
     public class ClassicChainKeys
     {

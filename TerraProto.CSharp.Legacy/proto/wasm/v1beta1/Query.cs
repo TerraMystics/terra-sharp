@@ -1,4 +1,4 @@
-﻿namespace TerraProto.CSharp.proto.wasm.v1beta1
+﻿namespace Terra.Microsoft.ProtoBufs.proto.wasm.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class QueryCodeInfoRequest : global::ProtoBuf.IExtensible

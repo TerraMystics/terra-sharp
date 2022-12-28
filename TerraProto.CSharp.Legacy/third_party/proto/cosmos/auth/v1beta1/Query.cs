@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.third_party.proto.cosmos.ibase.query.v1beta1;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.ibase.query.v1beta1;
 
-namespace TerraProto.CSharp.third_party.proto.cosmos.auth.v1beta1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.auth.v1beta1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class QueryAccountsRequest : global::ProtoBuf.IExtensible

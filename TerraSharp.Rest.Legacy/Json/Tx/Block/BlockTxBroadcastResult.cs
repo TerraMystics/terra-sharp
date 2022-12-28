@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.third_party.proto.cosmos.tx.v1beta1;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.v1beta1;
 
-namespace TerraSharp.Rest.Tx.Block
+namespace Terra.Microsoft.Rest.Tx.Block
 {
     public class BlockTxBroadcastResult
     {

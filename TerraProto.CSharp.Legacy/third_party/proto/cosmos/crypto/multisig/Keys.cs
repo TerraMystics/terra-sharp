@@ -1,4 +1,4 @@
-﻿namespace TerraProto.CSharp.third_party.proto.cosmos.crypto.multisig
+﻿namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.crypto.multisig
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class LegacyAminoPubKey : global::ProtoBuf.IExtensible

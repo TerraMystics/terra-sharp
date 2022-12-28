@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TerraSharp.Rest.Classic
+namespace Terra.Microsoft.Rest.Classic
 {
     public class ClassicHttpResources
     {

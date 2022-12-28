@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace TerraSharp.Rest.IBC
+namespace Terra.Microsoft.Rest.IBC
 {
     public class IBCApiConsensusState
     {

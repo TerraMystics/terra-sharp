@@ -1,5 +1,5 @@
 ﻿
-using TerraSharp.Rest.Configuration.Environment;
+using Terra.Microsoft.Rest.Configuration.Environment;
 
 namespace TerraSharp.Maui.Example
 {

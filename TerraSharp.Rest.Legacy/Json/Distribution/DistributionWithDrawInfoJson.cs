@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Distribution
+﻿namespace Terra.Microsoft.Rest.Distribution
 {
     public class DistributionWithDrawInfoJson
     {

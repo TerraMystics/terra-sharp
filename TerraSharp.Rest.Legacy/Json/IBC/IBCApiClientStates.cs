@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TerraSharp.Rest.IBC
+namespace Terra.Microsoft.Rest.IBC
 {
     public class IBCApiClientStates
     {

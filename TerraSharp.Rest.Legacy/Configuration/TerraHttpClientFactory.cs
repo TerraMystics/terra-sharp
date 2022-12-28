@@ -5,9 +5,9 @@ using Polly.Extensions.Http;
 using System;
 using System.Net.Http;
 using System.Threading;
-using TerraSharp.Rest.Constants;
+using Terra.Microsoft.Rest.Constants;
 
-namespace TerraSharp.Rest.Configuration
+namespace Terra.Microsoft.Rest.Configuration
 {
     public class TerraHttpClientFactory
     {

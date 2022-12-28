@@ -1,8 +1,7 @@
-﻿
-using Google.Protobuf.WellKnownTypes;
-using TerraNetExtensions.StringExt;
+﻿using Google.Protobuf.WellKnownTypes;
+using Terra.Microsoft.Extensions.StringExt;
 
-namespace TerraSharp.Rest
+namespace Terra.Microsoft.Rest
 {
     public class CommonTypeValueArgs
     {

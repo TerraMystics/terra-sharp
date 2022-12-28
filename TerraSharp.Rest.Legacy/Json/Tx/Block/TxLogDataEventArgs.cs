@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace TerraSharp.Rest.Tx.Block
+namespace Terra.Microsoft.Rest.Tx.Block
 {
     public class TxLogDataEventArgs
     {

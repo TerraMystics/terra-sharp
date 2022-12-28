@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.Slashing
+﻿namespace Terra.Microsoft.Rest.Slashing
 {
     public class SlashingApiSigningInfoParams
     {

@@ -1,4 +1,4 @@
-﻿namespace TerraSharp.Rest.FeeGrant
+﻿namespace Terra.Microsoft.Rest.FeeGrant
 {
     public class FeeGrantAPIJson
     {

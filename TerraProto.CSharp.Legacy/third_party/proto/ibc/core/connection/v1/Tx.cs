@@ -1,6 +1,6 @@
-﻿using TerraProto.CSharp.third_party.proto.ibc.core.client.v1;
+﻿using Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.client.v1;
 
-namespace TerraProto.CSharp.third_party.proto.ibc.core.connection.v1
+namespace Terra.Microsoft.ProtoBufs.third_party.proto.ibc.core.connection.v1
 {
     [global::ProtoBuf.ProtoContract()]
     public partial class MsgConnectionOpenInit : global::ProtoBuf.IExtensible
