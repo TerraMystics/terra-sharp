@@ -9,7 +9,7 @@ The Official C# SDK for the Terra Ecosystem (LUNC/USTC/LUNA2)
 <br/>
 
 <p align="center">
-  <a href="https://github.com/TerraMystics/Terra.Microsoft.Client/blob/main/LICENSE.md">
+  <a href="https://github.com/TerraMystics/terra-sharp/blob/main/LICENSE.md">
   <img alt="GitHub" src="https://img.shields.io/github/license/terra-money/terra.js">
   </a>
 
