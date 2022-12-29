@@ -26,9 +26,9 @@ The Official C# SDK for the Terra Ecosystem (LUNC/USTC/LUNA2)
   <a href="https://docs.terra.money/"><strong>Explore the Docs »</strong></a>
   <br />
   <br/>
-  <a href="https://github.com/terra-rebels/Terra.Microsoft.Client/tree/master/Terra.Microsoft.Client.Maui.Example">Example App</a>
+  <a href="https://github.com/TerraMystics/terra-sharp/tree/main/TerraSharp.Maui.Example">Example App</a>
   ·
-  <a href="https://terra-rebels.github.io/Terra.Microsoft.Client/Terra.Microsoft.Client/Documentation/html/index.html">API Reference</a>
+  <a href="">API Reference</a>
   ·
   <a href="https://www.nuget.org/packages/Terra.Microsoft.Client/1.0.1">Nuget Package</a>
   ·
