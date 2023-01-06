@@ -64,14 +64,15 @@
     <PackageReference Include="Polly.Extensions.Http" Version="3.0.0" />
     <PackageReference Include="RandomStringCreator" Version="2.0.0" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
-    <PackageReference Include="TerraSharp" Version="1.0.3" />
-    <PackageReference Include="TerraSharp" Version="1.1.6" />
     <PackageReference Include="Websocket.Client" Version="4.4.43" />
     <PackageReference Include="protobuf-net" Version="3.1.22" />
     <PackageReference Include="Protobuf.Grpc" Version="1.0.170" />
-    <PackageReference Include="TerraSharp.Legacy" Version="1.0.1" />
-    <PackageReference Include="TerraSharp.Legacy" Version="1.1.9" />
-    <PackageReference Include="Terra.Microsoft.Rest" Version="1.0.3" />
-    <PackageReference Include="TerraProtoBufs" Version="1.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Terra.Microsoft.Extensions\Terra.Microsoft.Extensions.csproj" />
+    <ProjectReference Include="..\TerraProto.CSharp.Legacy\TerraProto.CSharp.Legacy.csproj" />
+    <ProjectReference Include="..\TerraSharp.Rest.Legacy\TerraSharp.Rest.Legacy.csproj" />
+    <ProjectReference Include="..\TerraSharp\TerraSharp.csproj" />
   </ItemGroup>
 </Project>

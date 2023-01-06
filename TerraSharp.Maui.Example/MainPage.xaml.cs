@@ -1,6 +1,9 @@
-﻿using TerraSharp.Core.Bank.Msgs;
-using TerraSharp.Core.Constants;
-using TerraSharp.Key;
+﻿
+using Terra.Microsoft.Client;
+using Terra.Microsoft.Client.Core;
+using Terra.Microsoft.Client.Core.Bank.Msgs;
+using Terra.Microsoft.Client.Core.Constants;
+using Terra.Microsoft.Client.Key;
 using Terra.Microsoft.Rest.Tx.Block;
 
 namespace TerraSharp.Maui.Example
@@ -36,7 +39,7 @@ namespace TerraSharp.Maui.Example
                 var send = new MsgSend(
                   wallet.accAddress,
                   rAddr,
-                   new List<Core.Coin>() { new Core.Coin(CoinDenoms.ULUNA, 20) });
+                   new List<Coin>() { new Coin(CoinDenoms.ULUNA, 20) });
 
                 var msgs = new object[] { send };
 
