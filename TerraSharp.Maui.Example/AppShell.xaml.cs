@@ -1,4 +1,5 @@
 ﻿
+using Terra.Microsoft.Client;
 using Terra.Microsoft.Rest.Configuration.Environment;
 
 namespace TerraSharp.Maui.Example
