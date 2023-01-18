@@ -4,9 +4,9 @@ using Terra.Microsoft.Rest.Tx.Block;
 using Newtonsoft.Json;
 using Terra.Microsoft.Client.Core.Staking.Terra.Microsoft.Client.Core.Staking.Validators.Description;
 using Terra.Microsoft.Client.Core.Staking.Terra.Microsoft.Client.Core.Staking.Validators.CommissionsRates;
-using Terra.Microsoft.Client.Core.Keys;
 using Terra.Microsoft.Extensions.ProtoBufs;
 using Terra.Microsoft.Client.Core.Constants;
+using Terra.Microsoft.Keys;
 
 namespace Terra.Microsoft.Client.Core.Staking.Msgs
 {

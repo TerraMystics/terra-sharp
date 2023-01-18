@@ -3,9 +3,10 @@ using Terra.Microsoft.Rest.Staking;
 using PROTO = Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.staking.v1beta1;
 using System;
 using Terra.Microsoft.Client.Core.Staking.Terra.Microsoft.Client.Core.Staking.Validators.CommissionsRates;
-using Terra.Microsoft.Client.Core.Keys;
+using Terra.Microsoft.Keys;
 using Terra.Microsoft.Extensions.StringExt;
 using Terra.Microsoft.Extensions.ProtoBufs;
+using Terra.Microsoft.Keys.Extensions;
 
 namespace Terra.Microsoft.Client.Core.Staking
 {

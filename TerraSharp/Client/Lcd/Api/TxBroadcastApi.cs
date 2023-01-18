@@ -38,26 +38,30 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
         /// <param name="options"></param>
         /// <param name="messages"></param>
         /// <returns></returns>
-        public async Task<Fee> EstimatedFeeWithBurnTax(
-            double txAmount,
-            CreateTxOptions options)
+        public async Task<Fee> EstimatedFeeWithBurnTax(CreateTxOptions options)
         {
             var feeDenom = options.feeDenom ?? CoinDenoms.UUSD;
 
-            var gasAdjs = options.gasAdjustment ?? TerraClientConfiguration.LCDConfig.GasAdjustment.Value;
             var burnTax = await this.treasury.GetTaxRate();
-            var taxCap = await this.treasury.GetTaxCap(feeDenom);
+            var gasprices = await this.treasury.GetGasPriceForDenom(options.feeDenom);
 
-            var gasLimit = await this.treasury.GetGasPriceForDenom(feeDenom);
-            var gas = options.gas;
+            var estimatedGas = options.gas.Value;
+            var taxWithBurnTax = estimatedGas * burnTax;
+            var taxTotal = (estimatedGas + taxWithBurnTax) * gasprices;
 
-            var estimatedGas = (gas * gasAdjs);
-            var totalGas = estimatedGas * gasLimit;
-            var taxTotal = Math.Min((txAmount * burnTax), taxCap);
+            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) });
+        }
 
-            var totalFeeWithBurnTax = (long)Math.Ceiling((decimal)(taxTotal + totalGas));
+        public async Task<Fee> EstimatedFeeWithoutBurnTax(CreateTxOptions options)
+        {
+            var feeDenom = options.feeDenom ?? CoinDenoms.UUSD;
 
-            return new Fee(gas.Value, new List<Coin>() { new Coin(feeDenom, totalFeeWithBurnTax) });
+            var gasprices = await this.treasury.GetGasPriceForDenom(options.feeDenom);
+
+            var estimatedGas = options.gas.Value;
+            var taxTotal = estimatedGas * gasprices;
+
+            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) });
         }
 
         ///// <summary>
@@ -95,7 +99,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             return new Tx(
                  new TxBody(null, memo, 0),
                  new AuthInfo(new List<SignerInfo>() { }, fee),
-                 new List<string>() { }
+                 new List<string>()
                  );
         }
 
@@ -108,6 +112,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             var data = this.Encode(tx);
             var response = await this.apiRequester.PostAsync(rootPath, new TxContainerJSON()
             {
+                tx = tx,
                 mode = BroadcastModeConverter.GetFromEnum(mode),
                 tx_bytes = data
             });

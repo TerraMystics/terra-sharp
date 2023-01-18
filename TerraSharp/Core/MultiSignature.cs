@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System;
-using Terra.Microsoft.Client.Core.Keys;
 using Terra.Microsoft.Client.Core.SignatureV2n;
+using Terra.Microsoft.Extensions.StringExt;
+using Terra.Microsoft.Keys;
 
 namespace Terra.Microsoft.Client.Core
 {
@@ -49,7 +50,7 @@ namespace Terra.Microsoft.Client.Core
             //    throw new Exception("provided key doesn't exist in public_keys");
             //}
 
-       //     this.AppendSignature(signature_data, index);
+            //     this.AppendSignature(signature_data, index);
         }
 
         public void AppendSignatureV2s(SignatureV2[] signatures)
@@ -61,7 +62,7 @@ namespace Terra.Microsoft.Client.Core
                     throw new Exception("non-SimplePublicKey cannot be used to sign multisig");
                 }
 
-                this.AppendSignatureFromPubKey(signature.data, new SimplePublicKey(signature.public_key.Key));
+                this.AppendSignatureFromPubKey(signature.data, new SimplePublicKey(TerraStringExtensions.GetBase64BytesFromString(signature.public_key.Key)));
             }
         }
 

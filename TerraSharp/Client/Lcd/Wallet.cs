@@ -4,10 +4,11 @@ using Terra.Microsoft.Rest.Tx.Block;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Terra.Microsoft.Client.Client.Lcd.Api;
-using KEY = Terra.Microsoft.Client.Key;
 using Terra.Microsoft.Client.Core;
 using Terra.Microsoft.Client.Core.Constants;
+using Terra.Microsoft.Keys;
 using Terra.Microsoft.Client.Key;
+using Terra.Microsoft.Client.Core.Extensions;
 
 namespace Terra.Microsoft.Client.Client.Lcd
 {
@@ -17,7 +18,7 @@ namespace Terra.Microsoft.Client.Client.Lcd
     public class Wallet
     {
         private readonly LCDClient lcd;
-        private readonly KEY.Key key;
+        private readonly TxMnemonic key;
 
         /// <summary>
         /// Wallet address associated with the user
@@ -31,7 +32,7 @@ namespace Terra.Microsoft.Client.Client.Lcd
 
         public Wallet(
             LCDClient lcd,
-            KEY.Key key,
+            TxMnemonic key,
             string accAddress,
             TxBroadcastApi broadcastTx)
         {
@@ -68,9 +69,10 @@ namespace Terra.Microsoft.Client.Client.Lcd
         {
             var walletOptions = await GetWalletOptions();
 
-            return new KeyValuePair<Tx, SignOptions>(
-                await this.broadcastTx.CreateTx(fee, optionalNote),
-                walletOptions);
+            var tx = await this.broadcastTx.CreateTx(fee, optionalNote);
+            tx.auth_info.fee.SetGranter(accAddress);
+
+            return new KeyValuePair<Tx, SignOptions>(tx, walletOptions);
         }
 
         /// <summary>
@@ -82,9 +84,8 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <param name="coinTypeForGas"></param>
         /// <returns></returns>
         public async Task<double> EstimateGasForTx(
-            double txAmount,
             object[] messages,
-            double gasAdjustment = 3,
+            double gasAdjustment = 1.1,
             string coinTypeForGas = CoinDenoms.ULUNA)
         {
             var walletOptions = await GetWalletOptions();
@@ -92,8 +93,8 @@ namespace Terra.Microsoft.Client.Client.Lcd
 
             var signedTx = await this.key.SignTx(new Tx(
             new TxBody(null, "Running Gas Estimation", 0),
-                 new AuthInfo(new List<SignerInfo>() { }, new Fee(gasLimit, new List<Coin>() { new Coin(coinTypeForGas, txAmount) })),
-                 new List<string>() { }
+                 new AuthInfo(new List<SignerInfo>() { }, new Fee(gasLimit, new List<Coin>() { })),
+                 new List<string>()
                  ), walletOptions, messages);
 
             return await this.broadcastTx.EstimateGas(signedTx, gasAdjustment, messages);
@@ -105,11 +106,11 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <param name="txAmount"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public async Task<Fee> EstimateFeeForTx(
-            double txAmount,
-            CreateTxOptions options)
+        public async Task<Fee> EstimateFeeForTx(CreateTxOptions options)
         {
-            return await this.broadcastTx.EstimatedFeeWithBurnTax(txAmount, options);
+            return EnviromentExtensions.IsLuna2() ?
+                await this.broadcastTx.EstimatedFeeWithoutBurnTax( options) :
+                await this.broadcastTx.EstimatedFeeWithBurnTax( options);
         }
 
         /// <summary>

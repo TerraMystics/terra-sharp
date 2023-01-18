@@ -1,4 +1,5 @@
 ﻿using Terra.Microsoft.Client.Client.Lcd.Api;
+using Terra.Microsoft.Client.Key;
 
 namespace Terra.Microsoft.Client.Client.Lcd
 {
@@ -72,9 +73,9 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <param name="walletAddress"></param>
         /// <param name="key"></param>
         /// <returns></returns>
-        public Wallet CreateWallet(string walletAddress, Key.Key key)
+        public Wallet CreateWallet(TxMnemonic key)
         {
-            return new Wallet(this, key, walletAddress, this.tx_broadcast);
+            return new Wallet(this, key, key.AccAddress, this.tx_broadcast);
         }
     }
 }

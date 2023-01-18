@@ -1,59 +1,23 @@
-﻿using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.signing.v1beta1;
-using Terra.Microsoft.ProtoBufs.proto.keys;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Terra.Microsoft.Client.Core;
+﻿using System.Collections.Generic;
 using Terra.Microsoft.Client.Core.SignatureV2n;
+using Terra.Microsoft.Client.Core;
+using Terra.Microsoft.Keys;
+using System.Threading.Tasks;
+using System.Linq;
+using System;
 using Terra.Microsoft.Extensions.StringExt;
+using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.signing.v1beta1;
 using Terra.Microsoft.Client.Converters;
 
 namespace Terra.Microsoft.Client.Key
 {
-    public abstract class Key
+    public class TxMnemonic : MnemonicKey
     {
-        public KeysDto publicKey;
-
-        public Key() { }
-        public Key(KeysDto publicKey)
+        public string recoveryWords;
+        public TxMnemonic(string recoveryWords, bool exposePrivateKey = false) : base(recoveryWords, exposePrivateKey)
         {
-            this.publicKey = publicKey;
+
         }
-
-        public abstract Task<byte[]> Sign(byte[] payload);
-
-        //public string AccAddress
-        //{
-        //    get
-        //    {
-        //        if (this.publicKey == null)
-        //        {
-        //            throw new Exception("Could not compute accAddress: missing rawAddress");
-        //        }
-
-        //        using (SHA256 sHA = SHA256.Create())
-        //        {
-        //            return Bech32NanoExtensions.GetBech32EncodeFromData(TerraPubKeys.TERRA_PUBLIC_KEYNAME,
-        //                  HashExtensions.Ripemd160(TerraStringExtensions.GetStringFromBytes(
-        //                      sHA.ComputeHash(Encoding.ASCII.GetBytes(this.publicKey.Key)))));
-        //        }
-        //    }
-        //}
-
-        //public string ValAddress
-        //{
-        //    get
-        //    {
-        //        if (this.publicKey == null)
-        //        {
-        //            throw new Exception("Could not compute accAddress: missing rawAddress");
-        //        }
-
-        //        return Bech32NanoExtensions.GetBech32EncodeFromData(TerraPubKeys.TERRA_DEV_KEYNAME,
-        //              HashExtensions.Ripemd160(HashExtensions.HashToHex(TerraStringExtensions.GetBase64FromString(this.publicKey.Key))));
-        //    }
-        //}
 
         public async Task<SignatureV2> CreateSignatureAmino(SignDoc tx)
         {
@@ -64,7 +28,7 @@ namespace Terra.Microsoft.Client.Key
 
             var sigBytes = TerraStringExtensions.GetBase64FromBytes(await this.Sign(tx.ToProto()));
 
-            return new SignatureV2(this.publicKey,
+            return new SignatureV2(this.publicKey.ToProtoDto(),
                 new SignatureV2Descriptor(
                 new SignatureV2Single(SignMode.SignModeLegacyAminoJson, sigBytes)),
                 tx.sequence);
@@ -79,7 +43,7 @@ namespace Terra.Microsoft.Client.Key
 
             var copyTx = tx;
             copyTx.auth_info.signer_infos = new List<SignerInfo>() {
-                new SignerInfo(this.publicKey, copyTx.sequence,
+                new SignerInfo(this.publicKey.ToProtoDto(), copyTx.sequence,
                 new ModeInfo(
                 new SignatureV2Single(SignMode.SignModeDirect)))
             };
@@ -87,7 +51,7 @@ namespace Terra.Microsoft.Client.Key
             var dataToEncode = copyTx.ToProto(messages.ToList().ConvertAll(w => JSONMessageBodyConverter.GetJsonFromBody(w)).ToArray());
             var sigBytes = TerraStringExtensions.GetBase64FromBytes(await this.Sign(dataToEncode));
 
-            return new SignatureV2(this.publicKey,
+            return new SignatureV2(this.publicKey.ToProtoDto(),
                 new SignatureV2Descriptor(
                 new SignatureV2Single(SignMode.SignModeDirect, sigBytes)),
                 tx.sequence);
@@ -111,7 +75,7 @@ namespace Terra.Microsoft.Client.Key
                 signature = await this.CreateSignature(sign_doc, messages);
             }
 
-            tx.AppendSignatures(new SignatureV2[] { signature });
+            tx.AppendSignatures(new SignatureV2[] { signature }, this.privateKey);
 
             return tx;
         }

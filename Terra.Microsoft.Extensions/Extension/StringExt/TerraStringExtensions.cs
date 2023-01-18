@@ -11,6 +11,7 @@ namespace Terra.Microsoft.Extensions.StringExt
         private const string ISO_REGEX = "/\\.000Z$/";
         public static bool ContainsIgnoreCase(this string source, string verify) => source.ToLower().Contains(verify.ToLower());
 
+        public static string GetHexFromString(this byte[] data) => HexMate.Convert.ToHexString(data).ToUpper();
         /// <summary>
         /// Return either the attribute string or a default value.
         /// </summary>

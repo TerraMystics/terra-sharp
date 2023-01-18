@@ -1,6 +1,4 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using Terra.Microsoft.Client.Core.Keys;
-using Terra.Microsoft.Client.Core.Keys.Constants;
+﻿using Terra.Microsoft.Keys;
 
 namespace Terra.Microsoft.Client.Core
 {

@@ -1,5 +1,4 @@
 ﻿using System.Security.Cryptography;
-using System.Text;
 using Terra.Microsoft.Extensions.StringExt;
 
 namespace Terra.Microsoft.Extensions.Security
@@ -9,19 +8,29 @@ namespace Terra.Microsoft.Extensions.Security
         public static string GetSha256(string data) => new Plugin.Security.Core.PasswordEncoder()
             .Encode(data, Plugin.Security.Core.EncryptType.SHA_256);
 
-        public static string HashToHex(string data)
+        public static string HashToHex(byte[] data)
         {
-            return GetSha256(TerraStringExtensions.GetStringFromBase64(data)).ToUpper();
+            return TerraStringExtensions.GetHexFromString(Sha256(data));
         }
 
 
-        public static byte[] sha256(string data)
+        public static byte[] Sha256(byte[] data)
         {
             using (SHA256 hash = SHA256.Create())
             {
-                return hash.ComputeHash(Encoding.ASCII.GetBytes(data));
+                return hash.ComputeHash((data));
             }
         }
+
+        public static byte[] Ripemd(byte[] data)
+        {
+            using (RIPEMD160 hash = RIPEMD160.Create())
+            {
+                return hash.ComputeHash((data));
+            }
+        }
+
+
         private static char ToHexDigit(int i)
         {
             if (i < 10)

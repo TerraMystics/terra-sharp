@@ -2,8 +2,6 @@
 using PROTO = Terra.Microsoft.ProtoBufs.proto.market.v1beta1;
 using Terra.Microsoft.Client.Core.Constants;
 using Terra.Microsoft.Extensions.ProtoBufs;
-using Terra.Microsoft.Client.Core.Keys.Constants;
-using Terra.Microsoft.Client.Core.Keys;
 using Terra.Microsoft.Rest.Tx.Block;
 using Newtonsoft.Json;
 

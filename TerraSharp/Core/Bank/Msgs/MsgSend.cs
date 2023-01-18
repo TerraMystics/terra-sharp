@@ -1,7 +1,6 @@
 ﻿using PROTO = Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.bank.v1beta1;
 using Terra.Microsoft.Client.Core.Constants;
 using Terra.Microsoft.Client.Core.Extensions;
-using Terra.Microsoft.Client.Key.Data.SimplePublicKey;
 using Terra.Microsoft.Extensions.ProtoBufs;
 using Terra.Microsoft.Rest.Tx.Block;
 using Newtonsoft.Json;

@@ -1,7 +1,6 @@
 ﻿using PROTO = Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.iparams.v1beta1;
 using System.Linq;
 using System.Collections.Generic;
-using System;
 using Terra.Microsoft.Client.Core.Params;
 
 namespace Terra.Microsoft.Client.Core.Extensions

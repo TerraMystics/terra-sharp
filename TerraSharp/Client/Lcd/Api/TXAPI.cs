@@ -6,6 +6,7 @@ using System.Linq;
 using System;
 using Terra.Microsoft.Extensions.Security;
 using Terra.Microsoft.Client.Client.Lcd.Constants;
+using Terra.Microsoft.Extensions.StringExt;
 
 namespace Terra.Microsoft.Client.Client.Lcd.Api
 {
@@ -42,7 +43,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             }
             else
             {
-                return txs.txs.ToList().ConvertAll(w => HashExtensions.HashToHex(w)).ToArray();
+                return txs.txs.ToList().ConvertAll(w => HashExtensions.HashToHex(TerraStringExtensions.GetBase64BytesFromString(w))).ToArray();
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using Newtonsoft.Json;
+using System.Linq;
 using Terra.Microsoft.Client.Converters;
 using Terra.Microsoft.Client.Core;
 using Terra.Microsoft.Rest.Tx.Transaction.Upload;
@@ -13,7 +14,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api.Helpers
             {
                 auth_info = tx.auth_info.ToJson(),
                 body = tx.body.ToJsonForUpload(msgs.ToList().ConvertAll(w => JSONMessageBodyConverter.GetJsonFromBody(w)).ToArray()),
-                signatures = tx.signatures.ToArray(),
+                signatures = tx.signatures.ConvertAll(w => JsonConvert.SerializeObject(w)).ToArray(),
             };
         }
     }

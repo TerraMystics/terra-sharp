@@ -7,9 +7,19 @@ using Newtonsoft.Json;
 using Terra.Microsoft.Client.Converters;
 using System.Collections.Generic;
 using System.Linq;
+using Google.Protobuf.WellKnownTypes;
+using Terra.Microsoft.Client.Core.Extensions;
 
 namespace Terra.Microsoft.Client.Core
 {
+    //public class TxSignatures
+    //{
+    //    public string signature { get; set; }
+    //    public Any pub_key { get; set; }
+    //    public int account_number { get; set; }
+    //    public int sequence { get; set; }
+
+    //}
     public class Tx
     {
         public readonly TxBody body;
@@ -38,7 +48,7 @@ namespace Terra.Microsoft.Client.Core
             return new Tx(
                 TxBody.FromJSON(data.body),
                 AuthInfo.FromJSON(data.auth_info),
-                data.signatures.ToList());
+                null);
         }
 
         public byte[] ToProto(object[] msgs)
@@ -64,6 +74,8 @@ namespace Terra.Microsoft.Client.Core
                 Signatures = this.signatures.ToArray()
             };
         }
+
+
 
 
         //public Any PackAny()
@@ -114,13 +126,13 @@ namespace Terra.Microsoft.Client.Core
             this.signatures.Clear();
         }
 
-        public void AppendSignatures(SignatureV2[] signatures)
+        public void AppendSignatures(SignatureV2[] signatures, byte[] privateKey)
         {
             this.ClearSignatures();
             foreach (var signature in signatures)
             {
                 var modes = signature.data.ToModeInfoAndSignature();
-                this.signatures.Add(modes.Value);
+                this.signatures.Add(TerraStringExtensions.GetBase64FromBytes(privateKey));
                 this.auth_info?.signer_infos?.Add(new SignerInfo(signature.public_key, signature.sequence, modes.Key));
             }
         }

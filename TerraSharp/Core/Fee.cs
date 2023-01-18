@@ -12,7 +12,7 @@ namespace Terra.Microsoft.Client.Core
         public readonly List<Coin> amount;
         public readonly double gas_limit;
         public readonly string payer;
-        public readonly string granter;
+        public string granter;
 
         public Fee(double gas_limit, List<Coin> amount, string payer = "", string granter = "")
         {
@@ -20,6 +20,11 @@ namespace Terra.Microsoft.Client.Core
             this.amount = amount;
             this.payer = payer;
             this.granter = granter;
+        }
+
+        public void SetGranter(string granterAddress)
+        {
+            this.granter = granterAddress;
         }
 
         public FeeAminoArgs ToAmino()
