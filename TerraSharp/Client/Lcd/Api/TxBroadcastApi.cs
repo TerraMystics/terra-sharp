@@ -112,7 +112,6 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             var data = this.Encode(tx);
             var response = await this.apiRequester.PostAsync(rootPath, new TxContainerJSON()
             {
-                tx = tx,
                 mode = BroadcastModeConverter.GetFromEnum(mode),
                 tx_bytes = data
             });
