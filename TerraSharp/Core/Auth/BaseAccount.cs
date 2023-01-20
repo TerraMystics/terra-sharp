@@ -78,7 +78,7 @@ namespace Terra.Microsoft.Client.Core.Auth
             return ProtoExtensions.SerialiseFromData(new BASE.BaseAccount()
             {
                 Address = this.address,
-                PubKey = this.public_key.PackAny(this.public_key.Key),
+                PubKey = this.public_key.PackAny(),
                 Sequence = (ulong)this.sequence,
                 AccountNumber = (ulong)this.account_number
             });
@@ -89,7 +89,7 @@ namespace Terra.Microsoft.Client.Core.Auth
             return new BASE.BaseAccount()
             {
                 Address = this.address,
-                PubKey = this.public_key.PackAny(this.public_key.Key),
+                PubKey = this.public_key.PackAny(),
                 Sequence = (ulong)this.sequence,
                 AccountNumber = (ulong)this.account_number
             };

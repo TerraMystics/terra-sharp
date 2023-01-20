@@ -13,10 +13,10 @@ namespace Terra.Microsoft.Client.Key
 {
     public class TxMnemonic : MnemonicKey
     {
-        public string recoveryWords;
+        public readonly string recoveryWords;
         public TxMnemonic(string recoveryWords, bool exposePrivateKey = false) : base(recoveryWords, exposePrivateKey)
         {
-
+            this.recoveryWords = recoveryWords;
         }
 
         public async Task<SignatureV2> CreateSignatureAmino(SignDoc tx)
@@ -26,7 +26,7 @@ namespace Terra.Microsoft.Client.Key
                 throw new Exception("Signature could not be created: Key instance missing publicKey");
             }
 
-            var sigBytes = TerraStringExtensions.GetBase64FromBytes(await this.Sign(tx.ToProto()));
+            var sigBytes = await this.Sign(tx.ToProto());
 
             return new SignatureV2(this.publicKey.ToProtoDto(),
                 new SignatureV2Descriptor(
@@ -43,17 +43,16 @@ namespace Terra.Microsoft.Client.Key
 
             var copyTx = tx;
             copyTx.auth_info.signer_infos = new List<SignerInfo>() {
-                new SignerInfo(this.publicKey.ToProtoDto(), copyTx.sequence,
+                new SignerInfo(this.publicKey.ToKeyProto(), copyTx.sequence,
                 new ModeInfo(
                 new SignatureV2Single(SignMode.SignModeDirect)))
             };
 
             var dataToEncode = copyTx.ToProto(messages.ToList().ConvertAll(w => JSONMessageBodyConverter.GetJsonFromBody(w)).ToArray());
-            var sigBytes = TerraStringExtensions.GetBase64FromBytes(await this.Sign(dataToEncode));
-
-            return new SignatureV2(this.publicKey.ToProtoDto(),
+          
+            return new SignatureV2(this.publicKey.ToKeyProto(),
                 new SignatureV2Descriptor(
-                new SignatureV2Single(SignMode.SignModeDirect, sigBytes)),
+                new SignatureV2Single(SignMode.SignModeDirect, await this.Sign(dataToEncode))),
                 tx.sequence);
         }
 
@@ -75,7 +74,7 @@ namespace Terra.Microsoft.Client.Key
                 signature = await this.CreateSignature(sign_doc, messages);
             }
 
-            tx.AppendSignatures(new SignatureV2[] { signature }, this.privateKey);
+            tx.AppendSignatures(new SignatureV2[] { signature });
 
             return tx;
         }

@@ -5,6 +5,7 @@ using Terra.Microsoft.Client.Core;
 using Terra.Microsoft.Client.Core.Bank.Msgs;
 using Terra.Microsoft.Client.Core.Constants;
 using Terra.Microsoft.Client.Key;
+using Terra.Microsoft.Extensions.StringExt;
 using Terra.Microsoft.Rest.Tx.Block;
 
 namespace TerraSharp.Maui.Example
@@ -16,7 +17,7 @@ namespace TerraSharp.Maui.Example
         public MainPage()
         {
             InitializeComponent();
-            TerraStartup.InitializeKernel(Terra.Microsoft.Rest.Configuration.Environment.TerraEnvironment.LUNA2TestNet);
+            TerraStartup.InitializeKernel(Terra.Microsoft.Rest.Configuration.Environment.TerraEnvironment.ClassicTestNet);
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace TerraSharp.Maui.Example
 
                 // Create a key out of a mnemonic
                 var mnemonic = new TxMnemonic("notice oak worry limit wrap speak medal online prefer cluster " +
-                    "roof addict wrist behave treat actual wasp year salad speed social layer crew genius");
+                    "roof addict wrist behave treat actual wasp year salad speed social layer crew genius", true);
 
                 // Define the recipient address
                 var rAddr = "terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp";
@@ -58,6 +59,11 @@ namespace TerraSharp.Maui.Example
                 var txAfterGas = await wallet.CreateTxAndSignTx(
                         feeEstimate,
                         msgs);
+
+                System.Diagnostics.Debug.WriteLine($"PRIVATE KEY: {TerraStringExtensions.GetBase64FromBytes(mnemonic.privateKeyExposed)}");
+                System.Diagnostics.Debug.WriteLine($"PUBLIC KEY: {TerraStringExtensions.GetBase64FromBytes(mnemonic.publicKey.key)}");
+                System.Diagnostics.Debug.WriteLine($"TX PISCO: {txAfterGas.Signatures[0]}");
+                System.Diagnostics.Debug.WriteLine($"KEY FOR PISCO: wFHapTwCZ2z9nTGpRQ8QHdoUPju+4q9ejObAtqlkD9IwS8gF/GM8QgmrFdgoCenbT0X92HEGheYeNDqnUyTFvw==");
 
                 var broadcast = await wallet.broadcastTx.Broadcast(txAfterGas);
 

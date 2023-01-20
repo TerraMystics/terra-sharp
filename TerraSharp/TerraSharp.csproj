@@ -23,15 +23,16 @@
 		<PackageReference Include="Polly.Extensions.Http" Version="3.0.0" />
 		<PackageReference Include="RandomStringCreator" Version="2.0.0" />
 		<PackageReference Include="RIPEMD" Version="4.3.0" />
+		<PackageReference Include="starkbank-ecdsa" Version="1.3.3" />
 		<PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
 		<PackageReference Include="protobuf-net" Version="3.1.22" />
 		<PackageReference Include="Protobuf.Grpc" Version="1.0.170" />
 		<PackageReference Include="Terra.Microsoft.Extensions" Version="1.0.2" />
-		<PackageReference Include="Terra.Microsoft.Keys" Version="1.0.6" />
-		<PackageReference Include="Terra.Microsoft.ProtoBufs" Version="1.0.1" />
+		<PackageReference Include="Terra.Microsoft.ProtoBufs" Version="1.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\Terra.Microsoft.Keys\Terra.Microsoft.Keys\Terra.Microsoft.Keys\Terra.Microsoft.Keys.csproj" />
 	  <ProjectReference Include="..\TerraSharp.Rest.Legacy\TerraSharp.Rest.Legacy.csproj" />
 	</ItemGroup>
 </Project>

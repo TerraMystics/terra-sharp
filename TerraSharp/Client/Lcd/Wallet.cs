@@ -68,11 +68,8 @@ namespace Terra.Microsoft.Client.Client.Lcd
             string optionalNote = "")
         {
             var walletOptions = await GetWalletOptions();
-
-            var tx = await this.broadcastTx.CreateTx(fee, optionalNote);
-            tx.auth_info.fee.SetGranter(accAddress);
-
-            return new KeyValuePair<Tx, SignOptions>(tx, walletOptions);
+            return new KeyValuePair<Tx, SignOptions>(await this.broadcastTx
+                .CreateTx(fee, optionalNote), walletOptions);
         }
 
         /// <summary>
@@ -85,15 +82,13 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <returns></returns>
         public async Task<double> EstimateGasForTx(
             object[] messages,
-            double gasAdjustment = 1.1,
-            string coinTypeForGas = CoinDenoms.ULUNA)
+            double gasAdjustment = 1.1)
         {
             var walletOptions = await GetWalletOptions();
-            var gasLimit = await this.lcd.treasury.GetGasPriceForDenom(coinTypeForGas);
 
             var signedTx = await this.key.SignTx(new Tx(
             new TxBody(null, "Running Gas Estimation", 0),
-                 new AuthInfo(new List<SignerInfo>() { }, new Fee(gasLimit, new List<Coin>() { })),
+                 new AuthInfo(new List<SignerInfo>() { }, new Fee(0, new List<Coin>() { })),
                  new List<string>()
                  ), walletOptions, messages);
 
@@ -109,8 +104,8 @@ namespace Terra.Microsoft.Client.Client.Lcd
         public async Task<Fee> EstimateFeeForTx(CreateTxOptions options)
         {
             return EnviromentExtensions.IsLuna2() ?
-                await this.broadcastTx.EstimatedFeeWithoutBurnTax( options) :
-                await this.broadcastTx.EstimatedFeeWithBurnTax( options);
+                await this.broadcastTx.EstimatedFeeWithoutBurnTax(options) :
+                await this.broadcastTx.EstimatedFeeWithBurnTax(options);
         }
 
         /// <summary>

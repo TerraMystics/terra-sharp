@@ -36,7 +36,7 @@ namespace Terra.Microsoft.Client.Core
             {
                 ModeInfo = this.mode_info.ToProtoWithType(),
                 Sequence = (ulong)this.sequence,
-                PublicKey = this.public_key.PackAny(this.public_key.Key)
+                PublicKey = this.public_key.PackAny()
             };
 
             return msg;

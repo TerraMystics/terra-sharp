@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraProto.CSharp.Legacy", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraSharp.Rest.Legacy", "TerraSharp.Rest.Legacy\TerraSharp.Rest.Legacy.csproj", "{F207AC51-837E-45EE-A43C-9DFC9E31D1C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terra.Microsoft.Extensions", "Terra.Microsoft.Extensions\Terra.Microsoft.Extensions.csproj", "{0E54F7B6-4700-47A4-9EC9-FD3E18FFED8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terra.Microsoft.Extensions", "Terra.Microsoft.Extensions\Terra.Microsoft.Extensions.csproj", "{0E54F7B6-4700-47A4-9EC9-FD3E18FFED8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Temp", "Temp", "{2C887A32-734D-44EB-9310-584907DD23A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terra.Microsoft.Keys", "..\Terra.Microsoft.Keys\Terra.Microsoft.Keys\Terra.Microsoft.Keys\Terra.Microsoft.Keys.csproj", "{822161AB-557C-4414-A089-B9DD2C81B09C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{0E54F7B6-4700-47A4-9EC9-FD3E18FFED8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E54F7B6-4700-47A4-9EC9-FD3E18FFED8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E54F7B6-4700-47A4-9EC9-FD3E18FFED8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822161AB-557C-4414-A089-B9DD2C81B09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822161AB-557C-4414-A089-B9DD2C81B09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822161AB-557C-4414-A089-B9DD2C81B09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822161AB-557C-4414-A089-B9DD2C81B09C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +62,7 @@ Global
 		{AE13EFD4-D389-4492-8D21-6DF19106106C} = {E58980E7-4A68-4F95-B6E7-A2504A8F20AD}
 		{F207AC51-837E-45EE-A43C-9DFC9E31D1C7} = {E58980E7-4A68-4F95-B6E7-A2504A8F20AD}
 		{0E54F7B6-4700-47A4-9EC9-FD3E18FFED8F} = {E58980E7-4A68-4F95-B6E7-A2504A8F20AD}
+		{822161AB-557C-4414-A089-B9DD2C81B09C} = {2C887A32-734D-44EB-9310-584907DD23A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C8EC30CC-8752-47D9-92D6-884596B88E0A}

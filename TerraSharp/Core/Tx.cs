@@ -126,13 +126,13 @@ namespace Terra.Microsoft.Client.Core
             this.signatures.Clear();
         }
 
-        public void AppendSignatures(SignatureV2[] signatures, byte[] privateKey)
+        public void AppendSignatures(SignatureV2[] signatures)
         {
             this.ClearSignatures();
             foreach (var signature in signatures)
             {
                 var modes = signature.data.ToModeInfoAndSignature();
-                this.signatures.Add(TerraStringExtensions.GetBase64FromBytes(privateKey));
+                this.signatures.Add(modes.Value);
                 this.auth_info?.signer_infos?.Add(new SignerInfo(signature.public_key, signature.sequence, modes.Key));
             }
         }
