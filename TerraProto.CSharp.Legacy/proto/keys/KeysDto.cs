@@ -1,5 +1,6 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Newtonsoft.Json;
+using System.Net.Http.Headers;
 using Terra.Microsoft.Extensions.ProtoBufs;
 using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.crypto.secp256k1;
 
@@ -29,13 +30,10 @@ namespace Terra.Microsoft.ProtoBufs.proto.keys
 
         public Any PackAny()
         {
-            return new Any()
+            return new Any
             {
                 TypeUrl = this.TypeUrl,
-                Value = ProtoExtensions.SerialiseFromData(new PubKey()
-                {
-                    Key = RawPublicKey
-                })
+                Value = RawPublicKey
             };
         }
     }
@@ -45,5 +43,14 @@ namespace Terra.Microsoft.ProtoBufs.proto.keys
     {
         [ProtoBuf.ProtoMember(1, Name = "key")]
         public byte[] Key { get; set; }
+    }
+
+
+    public class TestKey
+    {
+        [JsonProperty("@type")]
+        public string TypeUrl { get; set; }
+
+        public string Key { get; set; }
     }
 }

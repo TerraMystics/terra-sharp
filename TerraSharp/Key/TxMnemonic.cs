@@ -8,6 +8,8 @@ using System;
 using Terra.Microsoft.Extensions.StringExt;
 using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.signing.v1beta1;
 using Terra.Microsoft.Client.Converters;
+using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace Terra.Microsoft.Client.Key
 {
@@ -26,15 +28,15 @@ namespace Terra.Microsoft.Client.Key
                 throw new Exception("Signature could not be created: Key instance missing publicKey");
             }
 
-            var sigBytes = await this.Sign(tx.ToProto());
+            //    var sigBytes = await this.Sign(tx.ToProto());
 
             return new SignatureV2(this.publicKey.ToProtoDto(),
                 new SignatureV2Descriptor(
-                new SignatureV2Single(SignMode.SignModeLegacyAminoJson, sigBytes)),
+                new SignatureV2Single(SignMode.SignModeLegacyAminoJson, null)),
                 tx.sequence);
         }
 
-        public async Task<SignatureV2> CreateSignature(SignDoc tx, object[] messages)
+        public async Task<KeyValuePair<string, SignatureV2>> CreateSignature(SignDoc tx)
         {
             if (this.publicKey == null)
             {
@@ -43,20 +45,20 @@ namespace Terra.Microsoft.Client.Key
 
             var copyTx = tx;
             copyTx.auth_info.signer_infos = new List<SignerInfo>() {
-                new SignerInfo(this.publicKey.ToKeyProto(), copyTx.sequence,
+                new SignerInfo(this.publicKey.ToProtoDto(), copyTx.sequence,
                 new ModeInfo(
                 new SignatureV2Single(SignMode.SignModeDirect)))
             };
 
-            var dataToEncode = copyTx.ToProto(messages.ToList().ConvertAll(w => JSONMessageBodyConverter.GetJsonFromBody(w)).ToArray());
-          
-            return new SignatureV2(this.publicKey.ToKeyProto(),
+            var dataToEncode = copyTx.ToData();
+
+            return new KeyValuePair<string, SignatureV2>(await Sign(JsonConvert.SerializeObject(dataToEncode)), new SignatureV2(this.publicKey.ToProtoDto(),
                 new SignatureV2Descriptor(
-                new SignatureV2Single(SignMode.SignModeDirect, await this.Sign(dataToEncode))),
-                tx.sequence);
+                new SignatureV2Single(SignMode.SignModeDirect)),
+                tx.sequence));
         }
 
-        public async Task<Tx> SignTx(Tx tx, SignOptions options, object[] messages)
+        public async Task<Tx> SignTx(Tx tx, SignOptions options)
         {
             if (this.publicKey == null)
             {
@@ -64,17 +66,11 @@ namespace Terra.Microsoft.Client.Key
             }
 
             var sign_doc = new SignDoc(options.ChainId, options.AccountNumber.Value, options.Sequence.Value, tx.auth_info, tx.body);
-            SignatureV2 signature;
-            if (options.SignMode == SignMode.SignModeLegacyAminoJson)
-            {
-                signature = await this.CreateSignatureAmino(sign_doc);
-            }
-            else
-            {
-                signature = await this.CreateSignature(sign_doc, messages);
-            }
+            var csign = await this.CreateSignature(sign_doc);
 
-            tx.AppendSignatures(new SignatureV2[] { signature });
+            SignatureV2 signature = csign.Value;
+
+            tx.AppendSignatures(new SignatureV2[] { signature }, csign.Key, TerraStringExtensions.GetBase64FromBytes(this.publicKey.key));
 
             return tx;
         }

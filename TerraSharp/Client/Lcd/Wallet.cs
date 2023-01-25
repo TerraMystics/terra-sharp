@@ -21,11 +21,6 @@ namespace Terra.Microsoft.Client.Client.Lcd
         private readonly TxMnemonic key;
 
         /// <summary>
-        /// Wallet address associated with the user
-        /// </summary>
-        public string accAddress;
-
-        /// <summary>
         /// Service responsible for broadcasting transactions to the chain, calculating estimated Gas & Fees 
         /// </summary>
         public readonly TxBroadcastApi broadcastTx;
@@ -33,12 +28,10 @@ namespace Terra.Microsoft.Client.Client.Lcd
         public Wallet(
             LCDClient lcd,
             TxMnemonic key,
-            string accAddress,
             TxBroadcastApi broadcastTx)
         {
             this.lcd = lcd;
             this.key = key;
-            this.accAddress = accAddress;
             this.broadcastTx = broadcastTx;
         }
 
@@ -48,18 +41,19 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <returns></returns>
         public async Task<KeyValuePair<double, double>> GetAccountNumberAndSequence()
         {
-            var response = await this.lcd.auth.GetAccountInfoWalletAddress(this.accAddress);
+            var response = await this.lcd.auth.GetAccountInfoWalletAddress(key.AccAddress);
             return new KeyValuePair<double, double>(response.Account_number, response.Sequence);
         }
 
         private async Task<SignOptions> GetWalletOptions()
         {
+            var acc = await this.GetAccountNumberAndSequence();
             return new SignOptions()
             {
                 SignMode = Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.signing.v1beta1.SignMode.SignModeDirect,
                 ChainId = TerraClientConfiguration.LCDConfig.ChainID,
-                AccountNumber = await this.GetAccountNumber(),
-                Sequence = await this.GetSequence()
+                AccountNumber = acc.Key,
+                Sequence = acc.Value
             };
         }
 
@@ -86,11 +80,8 @@ namespace Terra.Microsoft.Client.Client.Lcd
         {
             var walletOptions = await GetWalletOptions();
 
-            var signedTx = await this.key.SignTx(new Tx(
-            new TxBody(null, "Running Gas Estimation", 0),
-                 new AuthInfo(new List<SignerInfo>() { }, new Fee(0, new List<Coin>() { })),
-                 new List<string>()
-                 ), walletOptions, messages);
+            var tx = await CreateTx(new Fee(0, new List<Coin>() { }), "Running Gas Estimation");
+            var signedTx = await this.key.SignTx(tx.Key, walletOptions);
 
             return await this.broadcastTx.EstimateGas(signedTx, gasAdjustment, messages);
         }
@@ -114,7 +105,7 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <returns></returns>
         public async Task<double> GetAccountNumber()
         {
-            var response = await this.lcd.auth.GetAccountInfoWalletAddress(this.accAddress);
+            var response = await this.lcd.auth.GetAccountInfoWalletAddress(key.AccAddress);
             return response.Account_number;
         }
 
@@ -124,7 +115,7 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <returns></returns>
         public async Task<double> GetSequence()
         {
-            var response = await this.lcd.auth.GetAccountInfoWalletAddress(this.accAddress);
+            var response = await this.lcd.auth.GetAccountInfoWalletAddress(key.AccAddress);
             return response.Sequence;
         }
 
@@ -140,7 +131,7 @@ namespace Terra.Microsoft.Client.Client.Lcd
             string optionalNote = "")
         {
             var tx = await CreateTx(fee, optionalNote);
-            return (await this.key.SignTx(tx.Key, tx.Value, messages)).ToProtoWithType(messages);
+            return (await this.key.SignTx(tx.Key, tx.Value)).ToProtoWithType(messages);
         }
     }
 }

@@ -75,7 +75,7 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <returns></returns>
         public Wallet CreateWallet(TxMnemonic key)
         {
-            return new Wallet(this, key, key.AccAddress, this.tx_broadcast);
+            return new Wallet(this, key, this.tx_broadcast);
         }
     }
 }
