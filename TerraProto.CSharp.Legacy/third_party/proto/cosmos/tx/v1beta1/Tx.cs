@@ -24,7 +24,26 @@ namespace Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.v1beta1
         public AuthInfo AuthInfo { get; set; }
 
         [global::ProtoBuf.ProtoMember(3, Name = @"signatures")]
-        public global::System.Collections.Generic.List<string> Signatures { get; set; } = new global::System.Collections.Generic.List<string>();
+        public global::System.Collections.Generic.List<TxSignatures> Signatures { get; set; } = new global::System.Collections.Generic.List<TxSignatures>();
+    }
+
+
+    [global::ProtoBuf.ProtoContract()]
+    public partial class TxSignatures : global::ProtoBuf.IExtensible
+    {
+        private global::ProtoBuf.IExtension __pbn__extensionData;
+        global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
+            => global::ProtoBuf.Extensible.GetExtensionObject(ref __pbn__extensionData, createIfMissing);
+
+        [global::ProtoBuf.ProtoMember(1, Name = @"signature")]
+        public string Signature { get; set; }
+        [global::ProtoBuf.ProtoMember(2, Name = @"pub_key")]
+        public Any PublicKey { get; set; }
+        [global::ProtoBuf.ProtoMember(3, Name = @"account_number")]
+        public double AccNumber { get; set; }
+        [global::ProtoBuf.ProtoMember(4, Name = @"sequence")]
+        public double Sequence { get; set; }
+
     }
 
     [global::ProtoBuf.ProtoContract()]

@@ -32,7 +32,7 @@ namespace TerraSharp.Maui.Example
 
                 // Create a key out of a mnemonic
                 var mnemonic = new TxMnemonic("notice oak worry limit wrap speak medal online prefer cluster " +
-                    "roof addict wrist behave treat actual wasp year salad speed social layer crew genius", true);
+                    "roof addict wrist behave treat actual wasp year salad speed social layer crew genius");
 
                 // Define the recipient address
                 var rAddr = "terra17lmam6zguazs5q5u6z5mmx76uj63gldnse2pdp";
@@ -43,7 +43,7 @@ namespace TerraSharp.Maui.Example
                 var wallet = TerraStartup.GetLCDClient().CreateWallet(mnemonic);
 
                 var send = new MsgSend(
-                  wallet.accAddress,
+                  mnemonic.AccAddress,
                   rAddr,
                    new List<Coin>() { new Coin(CoinDenoms.ULUNA, 100) });
 

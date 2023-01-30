@@ -50,9 +50,10 @@ namespace Terra.Microsoft.Client.Key
                 new SignatureV2Single(SignMode.SignModeDirect)))
             };
 
-            var dataToEncode = copyTx.ToData();
+            var dataToEncode = copyTx.ToProto();
 
-            return new KeyValuePair<string, SignatureV2>(await Sign(JsonConvert.SerializeObject(dataToEncode)), new SignatureV2(this.publicKey.ToProtoDto(),
+            return new KeyValuePair<string, SignatureV2>(await Sign(TerraStringExtensions.GetBase64FromBytes(dataToEncode)),
+                new SignatureV2(this.publicKey.ToProtoDto(),
                 new SignatureV2Descriptor(
                 new SignatureV2Single(SignMode.SignModeDirect)),
                 tx.sequence));
@@ -70,7 +71,7 @@ namespace Terra.Microsoft.Client.Key
 
             SignatureV2 signature = csign.Value;
 
-            tx.AppendSignatures(new SignatureV2[] { signature }, csign.Key, TerraStringExtensions.GetBase64FromBytes(this.publicKey.key));
+            tx.AppendSignatures(new SignatureV2[] { signature }, csign.Key);
 
             return tx;
         }

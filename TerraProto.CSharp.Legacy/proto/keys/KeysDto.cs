@@ -30,10 +30,13 @@ namespace Terra.Microsoft.ProtoBufs.proto.keys
 
         public Any PackAny()
         {
-            return new Any
+            return new Any()
             {
                 TypeUrl = this.TypeUrl,
-                Value = RawPublicKey
+                Value = ProtoExtensions.SerialiseFromData(new PubKey()
+                {
+                    Key = RawPublicKey
+                })
             };
         }
     }

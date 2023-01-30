@@ -25,12 +25,14 @@ namespace Terra.Microsoft.Client.Core
         public readonly TxBody body;
         public readonly AuthInfo auth_info;
         public List<string> signatures;
-
+        public double accNumber;
         public Tx(
             TxBody body,
             AuthInfo auth_info,
-            List<string> signatures)
+            List<string> signatures,
+            double accNumber)
         {
+            this.accNumber = accNumber;
             this.body = body;
             this.auth_info = auth_info;
             this.signatures = signatures;
@@ -41,14 +43,14 @@ namespace Terra.Microsoft.Client.Core
             return new Tx(
                 TxBody.FromData(data.Body),
                 AuthInfo.FromData(data.Auth_info),
-                data.Signatures.ToList());
+                data.Signatures.ToList(), 0);
         }
         public static Tx FromJSON(TxValueJSON data)
         {
             return new Tx(
                 TxBody.FromJSON(data.body),
                 AuthInfo.FromJSON(data.auth_info),
-                null);
+                null, 0);
         }
 
         public byte[] ToProto(object[] msgs)
@@ -57,11 +59,24 @@ namespace Terra.Microsoft.Client.Core
         }
         public PROTO.Tx ToProtoWithType(object[] msgs)
         {
+            var authType = this.auth_info.ToProtoWithType();
+
+            var csign = new List<PROTO.TxSignatures>()
+                {
+                    new PROTO.TxSignatures(){
+                        Signature = this.signatures[0],
+                        AccNumber =this.accNumber,
+                        PublicKey = authType.SignerInfos[0].PublicKey,
+                        Sequence = authType.SignerInfos[0].Sequence
+                    }
+                };
+
+
             return new PROTO.Tx()
             {
-                AuthInfo = this.auth_info.ToProtoWithType(),
+                AuthInfo = authType,
                 Body = this.body.ToProtoWithType(msgs.ToList().ConvertAll(w => JSONMessageBodyConverter.GetJsonFromBody(w)).ToArray()),
-                Signatures = this.signatures,
+                Signatures = csign,
             };
         }
 
@@ -126,13 +141,13 @@ namespace Terra.Microsoft.Client.Core
             this.signatures.Clear();
         }
 
-        public void AppendSignatures(SignatureV2[] signatures)
+        public void AppendSignatures(SignatureV2[] signatures, string csignature)
         {
             this.ClearSignatures();
             foreach (var signature in signatures)
             {
                 var modes = signature.data.ToModeInfoAndSignature();
-                this.signatures.Add(modes.Value);
+                this.signatures.Add(csignature);
                 this.auth_info?.signer_infos?.Add(new SignerInfo(signature.public_key, signature.sequence, modes.Key));
             }
         }

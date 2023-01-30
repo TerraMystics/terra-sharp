@@ -12,6 +12,10 @@ namespace Terra.Microsoft.Rest.Tx.Transaction
         public TxValueJSON[] txs { get; set; }
         public TxResponse tx_response { get; set; }
 
+
+        public string[] sequences { get; set; }
+        public string fee_granter { get; set; }
+
     }
 
 

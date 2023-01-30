@@ -13,6 +13,8 @@ using Terra.Microsoft.Extensions.ProtoBufs;
 using Terra.Microsoft.Client.Core;
 using Terra.Microsoft.Client.Client.Lcd.Constants;
 using Terra.Microsoft.Client.Core.Constants;
+using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace Terra.Microsoft.Client.Client.Lcd.Api
 {
@@ -49,7 +51,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             var taxWithBurnTax = estimatedGas * burnTax;
             var taxTotal = (estimatedGas + taxWithBurnTax) * gasprices;
 
-            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) });
+            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) }, "", options.FeeGranter);
         }
 
         public async Task<Fee> EstimatedFeeWithoutBurnTax(CreateTxOptions options)
@@ -61,7 +63,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             var estimatedGas = options.gas.Value;
             var taxTotal = estimatedGas * gasprices;
 
-            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) });
+            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) }, "", options.FeeGranter);
         }
 
         ///// <summary>
@@ -82,7 +84,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             var response = await this.apiRequester.PostAsync(rootPath,
                 new TxUploadContainerJSON()
                 {
-                    tx_bytes = data
+                    tx_bytes = data,
                 });
             if (response.Successful)
             {
@@ -94,13 +96,13 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
 
         public async Task<Core.Tx> CreateTx(
             Fee fee,
+            double accNumber,
             string memo = "")
         {
             return new Tx(
                  new TxBody(null, memo, 0),
                  new AuthInfo(new List<SignerInfo>() { }, fee),
-                 new List<string>()
-                 );
+                 new List<string>(), accNumber);
         }
 
         private async Task<TxResponse> BroadcastShared(PROTO.Tx tx, PROTO.BroadcastMode mode)
@@ -109,12 +111,21 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
                 TerraClientConfiguration.BlockchainResourcePath,
                 CosmosBaseConstants.COSMOS_TX_TXS);
 
+
+            Debug.WriteLine($"PROTO TX: {JsonConvert.SerializeObject(tx)}");
             var data = this.Encode(tx);
-            var response = await this.apiRequester.PostAsync(rootPath, new TxContainerJSON()
+
+            var container = new TxContainerJSON()
             {
                 mode = BroadcastModeConverter.GetFromEnum(mode),
-                tx_bytes = data
-            });
+                tx_bytes = data,
+                tx = tx,
+                sequences = new string[] { $"{tx.AuthInfo.SignerInfos[0].Sequence}" },
+                fee_granter = tx.AuthInfo.Fee.Granter
+            };
+
+            Debug.WriteLine($"TX: {JsonConvert.SerializeObject(container)}");
+            var response = await this.apiRequester.PostAsync(rootPath, container);
 
             if (response.Successful)
             {

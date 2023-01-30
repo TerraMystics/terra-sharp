@@ -55,11 +55,6 @@ namespace Terra.Microsoft.Client.Core
             return ProtoExtensions.SerialiseFromData(data);
         }
 
-        public Tx ToUnsignedTx()
-        {
-            return new Tx(this.tx_body, this.auth_info, new List<string>());
-        }
-
         public SignDocDataArgs ToData()
         {
             return new SignDocDataArgs()

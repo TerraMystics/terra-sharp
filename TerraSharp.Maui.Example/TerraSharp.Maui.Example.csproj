@@ -68,6 +68,7 @@
     <PackageReference Include="RIPEMD" Version="4.3.0" />
     <PackageReference Include="starkbank-ecdsa" Version="1.3.3" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    <PackageReference Include="Terra.Microsoft.Extensions" Version="1.0.2" />
     <PackageReference Include="Websocket.Client" Version="4.4.43" />
     <PackageReference Include="protobuf-net" Version="3.1.22" />
     <PackageReference Include="Protobuf.Grpc" Version="1.0.170" />
@@ -75,7 +76,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Terra.Microsoft.Keys\Terra.Microsoft.Keys\Terra.Microsoft.Keys\Terra.Microsoft.Keys.csproj" />
-    <ProjectReference Include="..\Terra.Microsoft.Extensions\Terra.Microsoft.Extensions.csproj" />
     <ProjectReference Include="..\TerraProto.CSharp.Legacy\TerraProto.CSharp.Legacy.csproj" />
     <ProjectReference Include="..\TerraSharp.Rest.Legacy\TerraSharp.Rest.Legacy.csproj" />
     <ProjectReference Include="..\TerraSharp\TerraSharp.csproj" />

@@ -63,7 +63,7 @@ namespace Terra.Microsoft.Client.Client.Lcd
         {
             var walletOptions = await GetWalletOptions();
             return new KeyValuePair<Tx, SignOptions>(await this.broadcastTx
-                .CreateTx(fee, optionalNote), walletOptions);
+                .CreateTx(fee, walletOptions.AccountNumber.Value, optionalNote), walletOptions);
         }
 
         /// <summary>

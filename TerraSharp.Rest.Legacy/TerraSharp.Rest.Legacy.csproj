@@ -14,7 +14,10 @@
     <PackageReference Include="protobuf-net" Version="3.1.22" />
     <PackageReference Include="Protobuf.Grpc" Version="1.0.170" />
     <PackageReference Include="Terra.Microsoft.Extensions" Version="1.0.2" />
-    <PackageReference Include="Terra.Microsoft.ProtoBufs" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TerraProto.CSharp.Legacy\TerraProto.CSharp.Legacy.csproj" />
   </ItemGroup>
 
 </Project>
