@@ -17,7 +17,7 @@ namespace TerraSharp.Maui.Example
         public MainPage()
         {
             InitializeComponent();
-            TerraStartup.InitializeKernel(Terra.Microsoft.Rest.Configuration.Environment.TerraEnvironment.ClassicTestNet);
+            TerraStartup.InitializeKernel(Terra.Microsoft.Rest.Configuration.Environment.TerraEnvironment.LUNA2TestNet);
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
