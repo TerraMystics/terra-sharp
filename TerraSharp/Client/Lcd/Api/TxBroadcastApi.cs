@@ -15,6 +15,7 @@ using Terra.Microsoft.Client.Client.Lcd.Constants;
 using Terra.Microsoft.Client.Core.Constants;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using Terra.Microsoft.Rest.Tx.Transaction.Response;
 
 namespace Terra.Microsoft.Client.Client.Lcd.Api
 {
@@ -51,7 +52,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             var taxWithBurnTax = estimatedGas * burnTax;
             var taxTotal = (estimatedGas + taxWithBurnTax) * gasprices;
 
-            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) }, "", options.FeeGranter);
+            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) }, "", "");
         }
 
         public async Task<Fee> EstimatedFeeWithoutBurnTax(CreateTxOptions options)
@@ -63,7 +64,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             var estimatedGas = options.gas.Value;
             var taxTotal = estimatedGas * gasprices;
 
-            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) }, "", options.FeeGranter);
+            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) }, "", "");
         }
 
         ///// <summary>
@@ -73,10 +74,8 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
         ///// <param name="options"></param>
         ///// <returns></returns>
         ///// <exception cref="InvalidOperationException"></exception>
-        public async Task<double> EstimateGas(Core.Tx simTx, double? gasAdjustment, object[] messages)
+        public async Task<TxGasInfoResponse> EstimateGas(Core.Tx simTx, double? gasAdjustment, object[] messages)
         {
-            var gasAdjs = gasAdjustment ?? TerraClientConfiguration.LCDConfig.GasAdjustment.Value;
-
             string rootPath = string.Concat(TerraClientConfiguration.BlockchainResourcePath, CosmosBaseConstants.COSMOS_TX_ESTIMATE_GAS_USAGE);
 
             var dataEncoded = simTx.ToProtoWithType(messages);
@@ -88,7 +87,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
                 });
             if (response.Successful)
             {
-                return gasAdjs * double.Parse(response.Result.gas_info.gas_used);
+                return response.Result.gas_info;
             }
 
             throw new InvalidOperationException("cannot append signature");
@@ -119,9 +118,6 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             {
                 mode = BroadcastModeConverter.GetFromEnum(mode),
                 tx_bytes = data,
-                tx = tx,
-                sequences = new string[] { $"{tx.AuthInfo.SignerInfos[0].Sequence}" },
-                fee_granter = tx.AuthInfo.Fee.Granter
             };
 
             Debug.WriteLine($"TX: {JsonConvert.SerializeObject(container)}");

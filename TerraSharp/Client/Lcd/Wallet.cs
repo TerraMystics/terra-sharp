@@ -9,6 +9,7 @@ using Terra.Microsoft.Client.Core.Constants;
 using Terra.Microsoft.Keys;
 using Terra.Microsoft.Client.Key;
 using Terra.Microsoft.Client.Core.Extensions;
+using Terra.Microsoft.Rest.Tx.Transaction.Response;
 
 namespace Terra.Microsoft.Client.Client.Lcd
 {
@@ -75,6 +76,28 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <param name="coinTypeForGas"></param>
         /// <returns></returns>
         public async Task<double> EstimateGasForTx(
+            object[] messages,
+            double gasAdjustment = 1.1)
+        {
+            var walletOptions = await GetWalletOptions();
+
+            var tx = await CreateTx(new Fee(0, new List<Coin>() { }), "Running Gas Estimation");
+            var signedTx = await this.key.SignTx(tx.Key, walletOptions);
+
+            var response = await this.broadcastTx.EstimateGas(signedTx, gasAdjustment, messages);
+
+            return gasAdjustment * double.Parse(response.gas_used);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="txAmount"></param>
+        /// <param name="messages"></param>
+        /// <param name="gasAdjustment"></param>
+        /// <param name="coinTypeForGas"></param>
+        /// <returns></returns>
+        public async Task<TxGasInfoResponse> EstimateGasForTxWithResponse(
             object[] messages,
             double gasAdjustment = 1.1)
         {

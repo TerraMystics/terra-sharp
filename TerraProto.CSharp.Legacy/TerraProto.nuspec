@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Terra.Microsoft.ProtoBufs</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <title>Terra.Microsoft.ProtoBufs</title>
     <icon>TerraMystic.png</icon>
     <authors>Dan Gerchcovich</authors>

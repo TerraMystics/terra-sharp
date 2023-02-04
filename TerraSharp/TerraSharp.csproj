@@ -28,11 +28,8 @@
 		<PackageReference Include="protobuf-net" Version="3.1.22" />
 		<PackageReference Include="Protobuf.Grpc" Version="1.0.170" />
 		<PackageReference Include="Terra.Microsoft.Extensions" Version="1.0.2" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\Terra.Microsoft.Keys\Terra.Microsoft.Keys\Terra.Microsoft.Keys\Terra.Microsoft.Keys.csproj" />
-	  <ProjectReference Include="..\TerraProto.CSharp.Legacy\TerraProto.CSharp.Legacy.csproj" />
-	  <ProjectReference Include="..\TerraSharp.Rest.Legacy\TerraSharp.Rest.Legacy.csproj" />
+		<PackageReference Include="Terra.Microsoft.Keys" Version="1.0.8" />
+		<PackageReference Include="Terra.Microsoft.ProtoBufs" Version="1.0.4" />
+		<PackageReference Include="Terra.Microsoft.Rest" Version="1.0.1" />
 	</ItemGroup>
 </Project>
