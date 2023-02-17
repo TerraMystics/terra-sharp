@@ -7,6 +7,7 @@ using System;
 using Terra.Microsoft.Client.Core;
 using Terra.Microsoft.Client.Client.Lcd.Constants;
 using Terra.Microsoft.Client.Core.Constants;
+using System.Globalization;
 
 namespace Terra.Microsoft.Client.Client.Lcd.Api
 {
@@ -53,7 +54,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             var response = await this.apiRequester.GetAsync<TreasuryTaxCap>(rootPath);
             if (response.Successful)
             {
-                return double.Parse(response.Result.tax_rate);
+                return double.Parse(response.Result.tax_rate,CultureInfo.InvariantCulture);
             }
 
             throw new ArgumentNullException($"Could not successfully fetch the");
