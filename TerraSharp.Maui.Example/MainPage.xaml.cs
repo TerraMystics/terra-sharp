@@ -49,7 +49,7 @@ namespace TerraSharp.Maui.Example
 
                 var msgs = new object[] { send };
 
-                var gas = await wallet.EstimateGasForTx(msgs);
+                var gas = await wallet.EstimateGasForTx(msgs, 1 * 1e6);
                 var feeEstimate = await wallet.EstimateFeeForTx(new CreateTxOptions()
                 {
                     gas = gas,
