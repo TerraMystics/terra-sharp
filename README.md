@@ -148,6 +148,7 @@ async void BroadcastTransaction() {
 
 If you need to integrate with an external payment system or gateway like Apple/Google in app purchases, please make sure to install the [following library](https://github.com/TerraMystics/FiatToLUNC) in your project.
 
+If you require a lightweight on-chain payments library, please make sure to install the [following library](https://github.com/TerraMystics/Terra.Net.OnChainPayments) in your project.
 
 ## Terra.Microsoft.Client For Unity Developers
 
