@@ -1,5 +1,6 @@
 ﻿
 using Newtonsoft.Json;
+using System.Diagnostics;
 using Terra.Microsoft.Client;
 using Terra.Microsoft.Client.Core;
 using Terra.Microsoft.Client.Core.Bank.Msgs;
@@ -60,7 +61,7 @@ namespace TerraSharp.Maui.Example
                         msgs);
 
                 var broadcast = await wallet.broadcastTx.Broadcast(txAfterGas);
-
+                Debug.WriteLine("RawLog: " + broadcast.Raw_log.ToString());
             });
         }
     }
