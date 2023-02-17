@@ -120,7 +120,7 @@ namespace Terra.Microsoft.Client.Client.Lcd
         public async Task<Fee> EstimateFeeForTx(CreateTxOptions options)
         {
             return EnviromentExtensions.IsLuna2() ?
-                this.broadcastTx.EstimatedFeeWithoutBurnTax(options) :
+                await this.broadcastTx.EstimatedFeeWithoutBurnTax(options) :
                 await this.broadcastTx.EstimatedFeeWithBurnTax(options);
         }
 

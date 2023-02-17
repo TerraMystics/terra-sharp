@@ -52,12 +52,12 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxWithBurnTax) }, "", "");
         }
 
-        public Fee EstimatedFeeWithoutBurnTax(CreateTxOptions options)
+        public async Task<Fee> EstimatedFeeWithoutBurnTax(CreateTxOptions options)
         {
             var feeDenom = options.feeDenom ?? CoinDenoms.UUSD;
             var estimatedGas = CurrencyConverter.ConvertStandardToMicro(options.gas.Value);
-
-            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)estimatedGas) }, "", "");
+            var result = new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)estimatedGas) }, "", "");
+            return result;
         }
 
         ///// <summary>
