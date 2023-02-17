@@ -76,11 +76,11 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <param name="coinTypeForGas"></param>
         /// <returns></returns>
         public async Task<double> EstimateGasForTx(
-            object[] messages)
+            object[] messages, double uluna)
         {
             var walletOptions = await GetWalletOptions();
 
-            var tx = await CreateTx(new Fee(0, new List<Coin>() { }), "Running Gas Estimation");
+            var tx = await CreateTx(new Fee(uluna, new List<Coin>() { }), "Running Gas Estimation");
             var signedTx = await this.key.SignTx(tx.Key, walletOptions);
 
             double gasAdjustment = 1;
@@ -101,11 +101,11 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <param name="gasAdjustment"></param>
         /// <param name="coinTypeForGas"></param>
         /// <returns></returns>
-        public async Task<TxGasInfoResponse> EstimateGasForTxWithResponse(object[] messages)
+        public async Task<TxGasInfoResponse> EstimateGasForTxWithResponse(object[] messages, double uluna)
         {
             var walletOptions = await GetWalletOptions();
 
-            var tx = await CreateTx(new Fee(0, new List<Coin>() { }), "Running Gas Estimation");
+            var tx = await CreateTx(new Fee(uluna, new List<Coin>() { }), "Running Gas Estimation");
             var signedTx = await this.key.SignTx(tx.Key, walletOptions);
 
             return await this.broadcastTx.EstimateGas(signedTx, messages);
