@@ -13,9 +13,8 @@ using Terra.Microsoft.Extensions.ProtoBufs;
 using Terra.Microsoft.Client.Core;
 using Terra.Microsoft.Client.Client.Lcd.Constants;
 using Terra.Microsoft.Client.Core.Constants;
-using System.Diagnostics;
-using Newtonsoft.Json;
 using Terra.Microsoft.Rest.Tx.Transaction.Response;
+using TerraSharp.Converters;
 
 namespace Terra.Microsoft.Client.Client.Lcd.Api
 {
@@ -47,7 +46,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
 
             var burnTax = await this.treasury.GetTaxRate();
 
-            var estimatedGas = options.gas.Value;
+            var estimatedGas = CurrencyConverter.ConvertStandardToMicro(options.gas.Value);
             var taxWithBurnTax = estimatedGas + (estimatedGas * burnTax);
 
             return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxWithBurnTax) }, "", "");
@@ -56,7 +55,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
         public Fee EstimatedFeeWithoutBurnTax(CreateTxOptions options)
         {
             var feeDenom = options.feeDenom ?? CoinDenoms.UUSD;
-            var estimatedGas = options.gas.Value;
+            var estimatedGas = CurrencyConverter.ConvertStandardToMicro(options.gas.Value);
 
             return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)estimatedGas) }, "", "");
         }
@@ -81,7 +80,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
                 });
             if (response.Successful)
             {
-                return response.Result.gas_info;
+                return TxResponseCurrencyMicroConverter.ReformatGasResponse(response.Result.gas_info);
             }
 
             throw new InvalidOperationException("cannot append signature");
@@ -114,7 +113,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             var response = await this.apiRequester.PostAsync(rootPath, container);
             if (response.Successful)
             {
-                return response.Result.tx_response;
+                return TxResponseCurrencyMicroConverter.ReformatTxResponse(response.Result.tx_response);
             }
 
             throw new ArgumentNullException($"");
