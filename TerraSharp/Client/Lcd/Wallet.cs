@@ -97,6 +97,24 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// 
         /// </summary>
         /// <param name="txAmount"></param>
+        /// <param name="messages"></param>
+        /// <param name="gasAdjustment"></param>
+        /// <param name="coinTypeForGas"></param>
+        /// <returns></returns>
+        public async Task<TxGasInfoResponse> EstimateGasForTxWithResponse(object[] messages)
+        {
+            var walletOptions = await GetWalletOptions();
+
+            var tx = await CreateTx(new Fee(0, new List<Coin>() { }), "Running Gas Estimation");
+            var signedTx = await this.key.SignTx(tx.Key, walletOptions);
+
+            return await this.broadcastTx.EstimateGas(signedTx, messages);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="txAmount"></param>
         /// <param name="options"></param>
         /// <returns></returns>
         public async Task<Fee> EstimateFeeForTx(CreateTxOptions options)
