@@ -76,37 +76,21 @@ namespace Terra.Microsoft.Client.Client.Lcd
         /// <param name="coinTypeForGas"></param>
         /// <returns></returns>
         public async Task<double> EstimateGasForTx(
-            object[] messages,
-            double gasAdjustment = 1.1)
+            object[] messages)
         {
             var walletOptions = await GetWalletOptions();
 
             var tx = await CreateTx(new Fee(0, new List<Coin>() { }), "Running Gas Estimation");
             var signedTx = await this.key.SignTx(tx.Key, walletOptions);
 
-            var response = await this.broadcastTx.EstimateGas(signedTx, gasAdjustment, messages);
+            double gasAdjustment = 1;
+            if (TerraClientConfiguration.Terra != TerraEnvironment.LUNA2TestNet && TerraClientConfiguration.Terra != TerraEnvironment.LUNA2)
+            {
+                gasAdjustment += await this.lcd.treasury.GetTaxRate();
+            }
 
+            var response = await this.broadcastTx.EstimateGas(signedTx, messages);
             return gasAdjustment * double.Parse(response.gas_used);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="txAmount"></param>
-        /// <param name="messages"></param>
-        /// <param name="gasAdjustment"></param>
-        /// <param name="coinTypeForGas"></param>
-        /// <returns></returns>
-        public async Task<TxGasInfoResponse> EstimateGasForTxWithResponse(
-            object[] messages,
-            double gasAdjustment = 1.1)
-        {
-            var walletOptions = await GetWalletOptions();
-
-            var tx = await CreateTx(new Fee(0, new List<Coin>() { }), "Running Gas Estimation");
-            var signedTx = await this.key.SignTx(tx.Key, walletOptions);
-
-            return await this.broadcastTx.EstimateGas(signedTx, gasAdjustment, messages);
         }
 
         /// <summary>
@@ -118,7 +102,7 @@ namespace Terra.Microsoft.Client.Client.Lcd
         public async Task<Fee> EstimateFeeForTx(CreateTxOptions options)
         {
             return EnviromentExtensions.IsLuna2() ?
-                await this.broadcastTx.EstimatedFeeWithoutBurnTax(options) :
+                this.broadcastTx.EstimatedFeeWithoutBurnTax(options) :
                 await this.broadcastTx.EstimatedFeeWithBurnTax(options);
         }
 
@@ -141,7 +125,6 @@ namespace Terra.Microsoft.Client.Client.Lcd
             var response = await this.lcd.auth.GetAccountInfoWalletAddress(key.AccAddress);
             return response.Sequence;
         }
-
 
         /// <summary>
         /// 

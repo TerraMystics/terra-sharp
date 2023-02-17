@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Terra.Microsoft.Client.Core.Bank.Msgs
 {
-    public class MsgSend : SignerData
+    public class MsgSend
     {
         public List<Coin> amount;
         public readonly string from_address;

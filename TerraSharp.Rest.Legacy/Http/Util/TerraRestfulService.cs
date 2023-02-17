@@ -36,7 +36,7 @@ namespace Terra.Microsoft.Rest.Util
                 DateTimeZoneHandling = DateTimeZoneHandling.Utc,
                 NullValueHandling = NullValueHandling.Ignore,
                 MissingMemberHandling = MissingMemberHandling.Ignore,
-                 
+
             };
 
             this.serializerSettings.Converters.Add(new StringEnumConverter());
@@ -100,6 +100,32 @@ namespace Terra.Microsoft.Rest.Util
         public async Task<TerraRestfulResponse<T>> PostAsync<T>(string endpoint, T data, CancellationTokenSource tokenSource = null)
         {
             return await this.PostAsync<T, T>(endpoint, data, tokenSource);
+        }
+
+        /// <summary>
+        /// Runs a POST operation via HttpClient to send information.
+        /// </summary>
+        /// <typeparam name="T">Type of object data we are sending.</typeparam>
+        /// <param name="endpoint">API Endpoint.</param>
+        /// <param name="data">Data to send.</param>
+        /// <param name="header">Additional header information.</param>
+        /// <returns>Rest Response.</returns>
+        public async Task<TerraRestfulResponse<T>> PostAsyncWithQueryOnly<T>(string endpoint, CancellationTokenSource tokenSource = null)
+        {
+            using (var response = await this.clientService.PostAsync(endpoint, null, tokenSource))
+            {
+                response.EnsureSuccessStatusCode();
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new TerraRestfulResponse<T>
+                    {
+                        Successful = false,
+                        Message = $"Status Code: {response.StatusCode}, Reason: {response.ReasonPhrase}",
+                    };
+                }
+
+                return await this.DeserializeResponse<T>(response);
+            }
         }
 
         /// <summary>

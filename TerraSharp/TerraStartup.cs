@@ -51,7 +51,6 @@ namespace Terra.Microsoft.Client
         {
             TerraClientConfiguration.LCDConfig = new LCDClientConfig()
             {
-                GasAdjustment = LCDDefaultConfigs.GAS_ADJUSTMENT,
             };
 
             switch (TerraClientConfiguration.Terra = environment)

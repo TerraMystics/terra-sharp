@@ -39,13 +39,12 @@ namespace TerraSharp.Maui.Example
 
                 //// Define your wallet -- The account that will handle the transactions
                 ///
-                string test = mnemonic.AccAddress;
                 var wallet = TerraStartup.GetLCDClient().CreateWallet(mnemonic);
 
                 var send = new MsgSend(
                   mnemonic.AccAddress,
                   rAddr,
-                   new List<Coin>() { new Coin(CoinDenoms.ULUNA, 100) });
+                   new List<Coin>() { new Coin(CoinDenoms.ULUNA, 1 * 1e6) });
 
                 var msgs = new object[] { send };
 
@@ -60,15 +59,8 @@ namespace TerraSharp.Maui.Example
                         feeEstimate,
                         msgs);
 
-                System.Diagnostics.Debug.WriteLine($"PRIVATE KEY: {TerraStringExtensions.GetBase64FromBytes(mnemonic.privateKeyExposed)}");
-                System.Diagnostics.Debug.WriteLine($"PUBLIC KEY: {TerraStringExtensions.GetBase64FromBytes(mnemonic.publicKey.key)}");
-                System.Diagnostics.Debug.WriteLine($"TX PISCO: {txAfterGas.Signatures[0]}");
-                System.Diagnostics.Debug.WriteLine($"KEY FOR PISCO: wFHapTwCZ2z9nTGpRQ8QHdoUPju+4q9ejObAtqlkD9IwS8gF/GM8QgmrFdgoCenbT0X92HEGheYeNDqnUyTFvw==");
-
                 var broadcast = await wallet.broadcastTx.Broadcast(txAfterGas);
 
-                System.Diagnostics.Debug.WriteLine($"JSON: \n {JsonConvert.SerializeObject(txAfterGas)}");
-                System.Diagnostics.Debug.WriteLine("Uploaded Tx Hash" + broadcast.Txhash);
             });
         }
     }

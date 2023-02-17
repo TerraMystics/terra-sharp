@@ -60,11 +60,14 @@ namespace Terra.Microsoft.Rest.Util
         }
 
         /// <inheritdoc/>
-        public async Task<HttpResponseMessage> PostAsync(string requestUri, HttpContent content, CancellationTokenSource upperToken = null)
+        public async Task<HttpResponseMessage> PostAsync(string requestUri, HttpContent content = null, CancellationTokenSource upperToken = null)
         {
             using (var request = new HttpRequestMessage(HttpMethod.Post, new Uri(requestUri)))
             {
-                request.Content = content;
+                if (content != null)
+                {
+                    request.Content = content;
+                }
 
                 return await this.RunHttpOperation((source) => this.httpClient.SendAsync(request,
                     HttpCompletionOption.ResponseContentRead, source.Token), upperToken);

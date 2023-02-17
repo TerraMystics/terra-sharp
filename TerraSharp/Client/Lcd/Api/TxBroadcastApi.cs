@@ -46,25 +46,19 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
             var feeDenom = options.feeDenom ?? CoinDenoms.UUSD;
 
             var burnTax = await this.treasury.GetTaxRate();
-            var gasprices = await this.treasury.GetGasPriceForDenom(options.feeDenom);
 
             var estimatedGas = options.gas.Value;
-            var taxWithBurnTax = estimatedGas * burnTax;
-            var taxTotal = (estimatedGas + taxWithBurnTax) * gasprices;
+            var taxWithBurnTax = estimatedGas + (estimatedGas * burnTax);
 
-            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) }, "", "");
+            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxWithBurnTax) }, "", "");
         }
 
-        public async Task<Fee> EstimatedFeeWithoutBurnTax(CreateTxOptions options)
+        public Fee EstimatedFeeWithoutBurnTax(CreateTxOptions options)
         {
             var feeDenom = options.feeDenom ?? CoinDenoms.UUSD;
-
-            var gasprices = await this.treasury.GetGasPriceForDenom(options.feeDenom);
-
             var estimatedGas = options.gas.Value;
-            var taxTotal = estimatedGas * gasprices;
 
-            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)taxTotal) }, "", "");
+            return new Fee((int)estimatedGas, new List<Coin>() { new Coin(feeDenom, (int)estimatedGas) }, "", "");
         }
 
         ///// <summary>
@@ -74,7 +68,7 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
         ///// <param name="options"></param>
         ///// <returns></returns>
         ///// <exception cref="InvalidOperationException"></exception>
-        public async Task<TxGasInfoResponse> EstimateGas(Core.Tx simTx, double? gasAdjustment, object[] messages)
+        public async Task<TxGasInfoResponse> EstimateGas(Core.Tx simTx, object[] messages)
         {
             string rootPath = string.Concat(TerraClientConfiguration.BlockchainResourcePath, CosmosBaseConstants.COSMOS_TX_ESTIMATE_GAS_USAGE);
 
@@ -110,19 +104,14 @@ namespace Terra.Microsoft.Client.Client.Lcd.Api
                 TerraClientConfiguration.BlockchainResourcePath,
                 CosmosBaseConstants.COSMOS_TX_TXS);
 
-
-            Debug.WriteLine($"PROTO TX: {JsonConvert.SerializeObject(tx)}");
             var data = this.Encode(tx);
-
             var container = new TxContainerJSON()
             {
                 mode = BroadcastModeConverter.GetFromEnum(mode),
                 tx_bytes = data,
             };
 
-            Debug.WriteLine($"TX: {JsonConvert.SerializeObject(container)}");
             var response = await this.apiRequester.PostAsync(rootPath, container);
-
             if (response.Successful)
             {
                 return response.Result.tx_response;
