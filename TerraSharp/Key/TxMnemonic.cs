@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System;
 using Terra.Microsoft.Extensions.StringExt;
 using Terra.Microsoft.ProtoBufs.third_party.proto.cosmos.tx.signing.v1beta1;
+using NBitcoin.Protocol;
 
 namespace Terra.Microsoft.Client.Key
 {
@@ -63,11 +64,18 @@ namespace Terra.Microsoft.Client.Key
             }
 
             var sign_doc = new SignDoc(options.ChainId, options.AccountNumber.Value, options.Sequence.Value, tx.auth_info, tx.body);
-            var csign = await this.CreateSignature(sign_doc);
+           
+            SignatureV2 signature;
+            if (options.SignMode == SignMode.SignModeLegacyAminoJson)
+            {
+                signature = await this.CreateSignatureAmino(sign_doc);
+            }
+            else
+            {
+                signature = (await this.CreateSignature(sign_doc)).Value;
+            }
 
-            SignatureV2 signature = csign.Value;
-
-            tx.AppendSignatures(new SignatureV2[] { signature }, csign.Key);
+            tx.AppendSignatures(new SignatureV2[] { signature });
 
             return tx;
         }

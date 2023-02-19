@@ -141,13 +141,13 @@ namespace Terra.Microsoft.Client.Core
             this.signatures.Clear();
         }
 
-        public void AppendSignatures(SignatureV2[] signatures, string csignature)
+        public void AppendSignatures(SignatureV2[] signatures)
         {
             this.ClearSignatures();
             foreach (var signature in signatures)
             {
                 var modes = signature.data.ToModeInfoAndSignature();
-                this.signatures.Add(csignature);
+                this.signatures.Add(modes.Value);
                 this.auth_info?.signer_infos?.Add(new SignerInfo(signature.public_key, signature.sequence, modes.Key));
             }
         }
