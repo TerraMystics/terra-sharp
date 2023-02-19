@@ -44,7 +44,7 @@ namespace Terra.Microsoft.Client.Key
             copyTx.auth_info.signer_infos = new List<SignerInfo>() {
                 new SignerInfo(this.publicKey.ToProtoDto(), copyTx.sequence,
                 new ModeInfo(
-                new SignatureV2Single(SignMode.SignModeLegacyAminoJson)))
+                new SignatureV2Single(SignMode.SignModeDirect)))
             };
 
             var dataToEncode = copyTx.ToProto();
@@ -52,7 +52,7 @@ namespace Terra.Microsoft.Client.Key
             return new KeyValuePair<string, SignatureV2>(await Sign(TerraStringExtensions.GetBase64FromBytes(dataToEncode)),
                 new SignatureV2(this.publicKey.ToProtoDto(),
                 new SignatureV2Descriptor(
-                new SignatureV2Single(SignMode.SignModeLegacyAminoJson)),
+                new SignatureV2Single(SignMode.SignModeDirect)),
                 tx.sequence));
         }
 
